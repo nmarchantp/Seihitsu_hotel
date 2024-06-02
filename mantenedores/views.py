@@ -1,3 +1,5 @@
+# mantenedores/views.py
 from django.shortcuts import render
 
-# Create your views here.
+def mantenedor1(request):
+    return render(request, 'mantenedor1.html')

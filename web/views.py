@@ -1,3 +1,5 @@
+# web/views.py
 from django.shortcuts import render
 
-# Create your views here.
+def promociones(request):
+    return render(request, 'promociones.html')
