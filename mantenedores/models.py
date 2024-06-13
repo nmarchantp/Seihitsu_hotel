@@ -2,10 +2,20 @@ from django.db import models
 
 # Create your models here.
 
-#clase ciudad, donde coloamos las propiedades de una ciudad
-class Ciudad(models.Model):
+class Comuna(models.Model):
+    id_comuna = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
+    def __str__(self):
+        return self.nombre
 
-#clase pais, donde colocamos las propouedades de un pais
-class Pais(models.Model):
+class Region(models.Model):
+    id_region = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
+    def __str__(self):
+        return self.nombre
+
+class Pais(models.Model):
+    id_pais = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100)
+    def __str__(self):
+        return self.nombre
