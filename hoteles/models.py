@@ -15,6 +15,10 @@ class Hotel(models.Model):
     descripcion = models.TextField(blank=True)
     def __str__(self):
         return self.nombre
+    class Meta:
+        verbose_name = 'Hotel'
+        verbose_name_plural = 'Hoteles'
+        db_table = 'hotel'
 
 class TipoHabitacion(models.Model):
     id_tipo_habitacion = models.AutoField(primary_key=True)
@@ -22,11 +26,19 @@ class TipoHabitacion(models.Model):
     descripcion = models.TextField(blank=True)
     def __str__(self):
         return self.nombre
+    class Meta:
+        verbose_name = 'Tipo de habitación'
+        verbose_name_plural = 'Tipos de Habitaciones'
+        db_table = 'tipo_habitacion'
     
 class Comodidad(models.Model):
     id_comodidad = models.AutoField(primary_key=True)
     nombre  = models.CharField(max_length=100)
     descripcion = models.TextField(blank=True)
+    class Meta:
+        verbose_name = 'Comodidad'
+        verbose_name_plural = 'Comodidades'
+        db_table = 'comodidad'
 
 #clase habitación, donde colocamos las propiedades de cada habitación
 class Habitacion(models.Model):
@@ -47,3 +59,4 @@ class Habitacion(models.Model):
         unique_together = ('id_hotel','numero_habitacion')
         verbose_name = 'Habitación'
         verbose_name_plural = 'Habitaciones'
+        db_table = 'habitacion'

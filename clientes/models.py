@@ -19,6 +19,10 @@ class Cliente(models.Model):
     fecha_registro = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f'{self.nombre} {self.apellido}'
+    class Meta:
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
+        db_table = 'cliente'
     
 class MetodoPago(models.Model):
     id_metodo_pago=models.AutoField(primary_key=True)
@@ -26,6 +30,10 @@ class MetodoPago(models.Model):
     descripcion = models.TextField(blank=True)
     def __str__(self):
         return self.nombre
+    class Meta:
+        verbose_name = 'Metodo de Pago'
+        verbose_name_plural = 'Metodos de Pago'
+        db_table = 'metodo_pago'
     
 class TarjetaCredito(models.Model):
     id_tarjeta = models.AutoField(primary_key=True)
@@ -36,6 +44,10 @@ class TarjetaCredito(models.Model):
     cvv = models.CharField(max_length=4)
     def __str__(self):
         return f'Tarjeta {self.numero_tarjeta[-4:]} de {self.id_cliente}'
+    class Meta:
+        verbose_name = 'Tarjeta de Crédito'
+        verbose_name_plural = 'Tarjetas de Crédito'    
+        db_table = 'tarjeta_credito'
     
 class Pago(models.Model):
     id_pago = models.AutoField(primary_key=True)
@@ -50,13 +62,18 @@ class Pago(models.Model):
     class Meta:
         verbose_name = 'Pago'
         verbose_name_plural = 'Pagos'
+        db_table = 'pago'
 
-class Comentarios(models.Model):
+class Comentario(models.Model):
     id_comentario = models.AutoField(primary_key=True)
-    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='Comentarios')
+    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='Comentario')
     texto = models.TextField()
     fecha_comentario = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return f'Comentario de {self.cliente} el {self.fecha_comentario}'
+    class Meta:
+        verbose_name = 'Comentario'
+        verbose_name_plural = 'Comentarios'
+        db_table = 'comentario'
     
 

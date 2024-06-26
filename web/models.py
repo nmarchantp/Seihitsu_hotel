@@ -14,3 +14,4 @@ class Promocion(models.Model):
     class Meta:
         verbose_name = 'Promoción'
         verbose_name_plural = 'Promociones'
+        db_table = 'promocion'

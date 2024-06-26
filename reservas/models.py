@@ -28,6 +28,7 @@ class Reserva(models.Model):
     class Meta:
         verbose_name = 'Reserva'
         verbose_name_plural = 'Reservas'
+        db_table = 'reserva'
 
 class ReservaServicioAsociado(models.Model):
     id_reserva_servicio_asociado = models.AutoField(primary_key=True)
@@ -40,5 +41,6 @@ class ReservaServicioAsociado(models.Model):
         return f'{self.cantidad} x {self.id_servicio.nombre_servicio} para Reserva {self.id_reserva.referencia}'
     
     class Meta:
-        verbose_name = 'Servicio de Reserva'
-        verbose_name_plural = 'Servicios de Reserva'
+        verbose_name = 'Servicio Asociado a Reserva'
+        verbose_name_plural = 'Servicios Asociados a Reserva'
+        db_table = 'servicio_asociado_reserva'
