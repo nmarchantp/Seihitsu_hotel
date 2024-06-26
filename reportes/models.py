@@ -18,6 +18,7 @@ class InformeHabitaciones(models.Model):
     class Meta:
         verbose_name = 'Informe de Habitaciones'
         verbose_name_plural = 'Informes de Habitaciones'
+        db_table = 'informe_habitaciones'
 
 class InformeEventos(models.Model):
     id_informe_eventos = models.AutoField(primary_key=True)
@@ -32,6 +33,7 @@ class InformeEventos(models.Model):
     class Meta:
         verbose_name = 'Informe de Eventos'
         verbose_name_plural = 'Informes de Eventos'
+        db_table = 'informe_eventos'
 
 class InformeServicios(models.Model):
     id_informe_servicios = models.AutoField(primary_key=True)
@@ -46,3 +48,4 @@ class InformeServicios(models.Model):
     class Meta:
         verbose_name = 'Informe de Servicios'
         verbose_name_plural = 'Informes de Servicios'
+        db_table = 'informe_servicios'

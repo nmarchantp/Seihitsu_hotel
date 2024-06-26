@@ -9,6 +9,10 @@ class CategoriaServicio(models.Model):
 
     def __str__(self):
         return self.nombre_categoria
+    class Meta:
+        verbose_name = 'Categoria Servicio'
+        verbose_name_plural = 'Categorías de Servicio'
+        db_table = 'categoria_servicio'
     
 # Clase Servicio, donde colocamos las propiedades de un servicio
 class Servicio(models.Model):
@@ -21,6 +25,10 @@ class Servicio(models.Model):
 
     def __str__(self):
         return self.nombre_servicio
+    class Meta:
+        verbose_name = 'Servicio'
+        verbose_name_plural = 'Servicios'
+        db_table = 'servicio'
 
 # Clase ReservaServicioIndependiente, donde colocamos las propiedades de una reserva de servicio
 class ReservaServicioIndependiente(models.Model):
@@ -47,3 +55,4 @@ class ReservaServicioIndependiente(models.Model):
     class Meta:
         verbose_name = 'Reserva de Servicio'
         verbose_name_plural = 'Reservas de Servicios'
+        db_table = 'reserva_servicio'
