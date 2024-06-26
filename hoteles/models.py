@@ -1,5 +1,5 @@
 from django.db import models
-from mantenedores.models import *
+from utilidades.models import *
 # Create your models here.
 
 #clase hotel, donde colocamos las propiedades de cada hotel
