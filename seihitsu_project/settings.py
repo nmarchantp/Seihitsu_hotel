@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'clientes',
     'eventos',
     'hoteles',
-    'mantenedores',
+    'utilidades',
     'reportes',
     'reservas',
     'servicios',
