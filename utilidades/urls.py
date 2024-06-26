@@ -1,4 +1,4 @@
-# mantenedores/urls.py
+# utilidades/urls.py
 from django.urls import path
 from . import views
 
