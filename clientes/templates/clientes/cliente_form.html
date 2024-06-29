@@ -12,6 +12,15 @@
     <script src="{% static 'js/scripts.js' %}"></script>
 </head>
 <body>
+    <h1>Crear Cliente</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar Cliente</button>
+    </form>
+
+    <!-- ------------------------------- -->
+
     <h1>Formulario Cliente</h1>
     <form method="post">
         {% csrf_token %}
