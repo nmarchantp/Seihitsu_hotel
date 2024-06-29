@@ -1,87 +1,40 @@
 import uuid
-from django.core.exceptions import ValidationError
 from django.db import models
 from utilidades.models import *
 
+
 # Create your models here.
 
-class TipoCliente(models.Model):
-    id_tipo_cliente = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=15)
-    
-    def __str__(self):
-        return self.nombre
-    
-    class Meta:
-        verbose_name = 'Tipo de Cliente'
-        verbose_name_plural = 'Tipos de Cliente'
-        db_table = 'tipo_cliente'
-
+#clase cliente, donde colocamos las propiedades de un cliente
 class Cliente(models.Model):
-    id_cliente = models.AutoField(primary_key=True)
-    id_tipo_cliente = models.ForeignKey(TipoCliente, on_delete=models.CASCADE, related_name='clientes')
-    numero_identificacion = models.CharField(max_length=10)
+    id_cliente=models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    segundo_nombre = models.CharField(max_length=50, blank=True)
-    apellido = models.CharField(max_length=100, blank=True, null=True)
-    segundo_apellido = models.CharField(max_length=50, blank=True, null=True)
+    apellido = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    telefono = models.CharField(max_length=9)
-    direccion = models.CharField(max_length=50)
-    comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE, related_name='clientes_comuna')
-    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name='clientes_region')
-    pais = models.ForeignKey(Pais, on_delete=models.CASCADE, related_name='clientes_pais')
+    telefono = models.CharField(max_length=9, blank=True)
+    direccion = models.TextField(blank=True)
+    comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE, related_name='comunas')
+    region = models.ForeignKey(Region, on_delete=models.CASCADE, related_name='regiones')
+    pais = models.ForeignKey(Pais, on_delete=models.CASCADE, related_name='paises')
     fecha_registro = models.DateTimeField(auto_now_add=True)
-    #datos empresa
-    nombre_empresa = models.CharField(max_length=100, blank=True, null=True)
-    rut = models.CharField(max_length=13, blank=True, null=True)
-
-    def save(self, *args, **kwargs):
-        #1 es natural
-        if self.id_tipo_cliente == 1:
-            self.nombre_empresa = None
-            self.rut = None
-        #2 es empresa
-        elif self.id_tipo_cliente == 2:
-            self.apellido = None
-            self.segundo_apellido = None
-        super().save(*args, **kwargs)
-
-    def clean(self):
-        #1 es natural
-        if self.id_tipo_cliente == 1:
-            if not self.apellido:
-                raise ValidationError('Clientes individuales deben tener apellido.')
-        #2 es empresa
-        elif self.id_tipo_cliente == 2:
-            if not self.nombre_empresa or not self.rut:
-                raise ValidationError('Empresas deben tener nombre de empresa y RUT.')
-
     def __str__(self):
-        #1 es natural
-        if self.id_tipo_cliente == 1:
-            return f'{self.nombre} {self.apellido}'
-        #2 es empresa
-        elif self.id_tipo_cliente == 2:
-            return f'{self.nombre_empresa} ({self.nombre})'
-
+        return f'{self.nombre} {self.apellido}'
     class Meta:
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
         db_table = 'cliente'
-
-#Tipo de metodos de pago
+    
 class MetodoPago(models.Model):
     id_metodo_pago=models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField(blank=True)
     def __str__(self):
         return self.nombre
     class Meta:
         verbose_name = 'Metodo de Pago'
         verbose_name_plural = 'Metodos de Pago'
         db_table = 'metodo_pago'
-
-#Si el tipo de meetodo de pago es credito, debe guardar los datos en tarjeta de credito    
+    
 class TarjetaCredito(models.Model):
     id_tarjeta = models.AutoField(primary_key=True)
     id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='tarjetas_credito')
@@ -95,4 +48,32 @@ class TarjetaCredito(models.Model):
         verbose_name = 'Tarjeta de Crédito'
         verbose_name_plural = 'Tarjetas de Crédito'    
         db_table = 'tarjeta_credito'
+    
+class Pago(models.Model):
+    id_pago = models.AutoField(primary_key=True)
+    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='pagos')
+    id_metodo_pago = models.ForeignKey(MetodoPago, on_delete=models.SET_NULL, null=True, related_name='pagos')
+    tarjeta_credito = models.ForeignKey(TarjetaCredito, on_delete=models.SET_NULL, null=True, blank=True, related_name='pagos')
+    cantidad = models.DecimalField(max_digits=10, decimal_places=2)
+    fecha_pago = models.DateTimeField(auto_now_add=True)
+    referencia = models.UUIDField(default=uuid.uuid4, editable=False, unique=True) # Identificador único de la transacción
+    def __str__(self):
+        return f'pago {self.referencia} de {self.id_cliente}'
+    class Meta:
+        verbose_name = 'Pago'
+        verbose_name_plural = 'Pagos'
+        db_table = 'pago'
+
+class Comentario(models.Model):
+    id_comentario = models.AutoField(primary_key=True)
+    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='Comentario')
+    texto = models.TextField()
+    fecha_comentario = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return f'Comentario de {self.cliente} el {self.fecha_comentario}'
+    class Meta:
+        verbose_name = 'Comentario'
+        verbose_name_plural = 'Comentarios'
+        db_table = 'comentario'
+    
 
