@@ -1,0 +1,32 @@
+/* Estilos para formularios */
+/* separacion entre labels */
+.form-group {
+    margin-bottom: 100px;
+
+}
+
+.form-group label{
+    font-size: 50px;
+    background-color: red;
+}
+
+/* Estilo para inputs */
+/* estos son los labels */
+.form-control {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: red;
+}
+
+/* Estilos para botones */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
