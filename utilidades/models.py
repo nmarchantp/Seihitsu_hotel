@@ -29,15 +29,5 @@ class Pais(models.Model):
         return self.nombre
     class Meta:
         verbose_name = 'País'
-        verbose_name_plural = 'Paises'
+        verbose_name_plural = 'Paices'
         db_table = 'pais'
-
-class Ubicacion(models.Model):
-    id_ubicacion = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=50)
-    def __str__(self):
-        return self.nombre
-    class Meta:
-        verbose_name = 'Ubicacion'
-        verbose_name_plural = 'Ubicaciones'
-        db_table = 'ubicacion'

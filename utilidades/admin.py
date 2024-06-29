@@ -5,4 +5,3 @@ from .models import *
 admin.site.register(Comuna)
 admin.site.register(Region)
 admin.site.register(Pais)
-admin.site.register(Ubicacion)

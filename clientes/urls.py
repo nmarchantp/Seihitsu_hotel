@@ -2,9 +2,6 @@
 from django.urls import path
 from . import views
 
-app_name = 'clientes'
-
 urlpatterns = [
-    path('crear/', views.crear_cliente, name='crear_cliente'),
-   
+    path('', views.clientes, name='clientes'),  # URL para la sección de clientes
 ]
