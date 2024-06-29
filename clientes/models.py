@@ -2,6 +2,7 @@ import uuid
 from django.core.exceptions import ValidationError
 from django.db import models
 from utilidades.models import *
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -20,6 +21,7 @@ class TipoCliente(models.Model):
 class Cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
     id_tipo_cliente = models.ForeignKey(TipoCliente, on_delete=models.CASCADE, related_name='clientes')
+    id_user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
     numero_identificacion = models.CharField(max_length=10)
     nombre = models.CharField(max_length=100)
     segundo_nombre = models.CharField(max_length=50, blank=True)
@@ -36,34 +38,13 @@ class Cliente(models.Model):
     nombre_empresa = models.CharField(max_length=100, blank=True, null=True)
     rut = models.CharField(max_length=13, blank=True, null=True)
 
-    def save(self, *args, **kwargs):
-        #1 es natural
-        if self.id_tipo_cliente == 1:
-            self.nombre_empresa = None
-            self.rut = None
-        #2 es empresa
-        elif self.id_tipo_cliente == 2:
-            self.apellido = None
-            self.segundo_apellido = None
-        super().save(*args, **kwargs)
-
-    def clean(self):
-        #1 es natural
-        if self.id_tipo_cliente == 1:
-            if not self.apellido:
-                raise ValidationError('Clientes individuales deben tener apellido.')
-        #2 es empresa
-        elif self.id_tipo_cliente == 2:
-            if not self.nombre_empresa or not self.rut:
-                raise ValidationError('Empresas deben tener nombre de empresa y RUT.')
-
     def __str__(self):
-        #1 es natural
-        if self.id_tipo_cliente == 1:
+        if self.id_tipo_cliente == 1:  # Reemplaza con el ID correcto para cliente natural
             return f'{self.nombre} {self.apellido}'
-        #2 es empresa
-        elif self.id_tipo_cliente == 2:
+        elif self.id_tipo_cliente == 2:  # Reemplaza con el ID correcto para cliente empresa
             return f'{self.nombre_empresa} ({self.nombre})'
+        else:
+            return f'{self.nombre}'
 
     class Meta:
         verbose_name = 'Cliente'

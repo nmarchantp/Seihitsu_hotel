@@ -48,6 +48,33 @@ class ReservaServicioAsociado(models.Model):
         verbose_name_plural = 'Servicios Asociados a Reserva'
         db_table = 'servicio_asociado_reserva'
 
+# Clase ReservaServicioIndependiente, donde colocamos las propiedades de una reserva de servicio
+class ReservaServicioIndependiente(models.Model):
+    PENDIENTE = 'Pendiente'
+    CONFIRMADA = 'Confirmada'
+    CANCELADA = 'Cancelada'
+    
+    ESTADO_RESERVA_OPCIONES = [
+        (PENDIENTE, 'Pendiente'),
+        (CONFIRMADA, 'Confirmada'),
+        (CANCELADA, 'Cancelada'),
+    ]
+    
+    id_reserva_servicio = models.AutoField(primary_key=True)
+    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='reservas_servicio')
+    servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, related_name='reservas')
+    fecha_reserva = models.DateTimeField(auto_now_add=True)
+    fecha_servicio = models.DateTimeField()
+    estado = models.CharField(max_length=10, choices=ESTADO_RESERVA_OPCIONES, default=PENDIENTE)
+
+    def __str__(self):
+        return f'Reserva de {self.servicio.nombre_servicio} por {self.cliente.nombre}'
+
+    class Meta:
+        verbose_name = 'Reserva de Servicio'
+        verbose_name_plural = 'Reservas de Servicios'
+        db_table = 'reserva_servicio'
+
 class Comentario(models.Model):
     id_comentario = models.AutoField(primary_key=True)
     id_reserva = models.ForeignKey(ReservaHabitacion, on_delete=models.CASCADE, related_name='Comentario')
@@ -86,3 +113,5 @@ class Pago(models.Model):
         verbose_name = 'Pago'
         verbose_name_plural = 'Pagos'
         db_table = 'pago'
+
+

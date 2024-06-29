@@ -1,11 +1,12 @@
 from django import forms
 from .models import Cliente
 
-class ClienteForm(forms.ModelForm):
+
+class ClienteFormRegistro(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = [
-            'id_tipo_cliente', 'numero_identificacion', 'nombre', 'segundo_nombre',
+            'id_tipo_cliente', 'numero_identificacion', 'id_user', 'nombre', 'segundo_nombre',
             'apellido', 'segundo_apellido', 'email', 'telefono', 'direccion',
             'comuna', 'region', 'pais', 'nombre_empresa', 'rut'
         ]
