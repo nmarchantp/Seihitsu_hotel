@@ -2,7 +2,7 @@ from django.db import models
 from clientes.models import Cliente
 
 # Clase CategoriaServicio, donde colocamos las propiedades de una categoria de servicio
-class CategoriaServicio(models.Model):
+class TipoServicio(models.Model):
     id_categoria = models.AutoField(primary_key=True)
     nombre_categoria = models.CharField(max_length=100)
     descripcion = models.TextField(blank=True)
@@ -10,9 +10,9 @@ class CategoriaServicio(models.Model):
     def __str__(self):
         return self.nombre_categoria
     class Meta:
-        verbose_name = 'Categoria Servicio'
-        verbose_name_plural = 'Categorías de Servicio'
-        db_table = 'categoria_servicio'
+        verbose_name = 'Tipo de Servicio'
+        verbose_name_plural = 'Tipos de de Servicios'
+        db_table = 'tipo_servicio'
     
 # Clase Servicio, donde colocamos las propiedades de un servicio
 class Servicio(models.Model):
@@ -21,7 +21,7 @@ class Servicio(models.Model):
     descripcion = models.TextField(blank=True)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
     disponible = models.BooleanField(default=True)
-    id_categoria = models.ForeignKey(CategoriaServicio, on_delete=models.CASCADE, related_name='servicios')
+    id_categoria = models.ForeignKey(TipoServicio, on_delete=models.CASCADE, related_name='servicios')
 
     def __str__(self):
         return self.nombre_servicio
