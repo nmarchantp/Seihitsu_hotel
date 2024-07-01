@@ -1,0 +1,449 @@
+/*-------------------------------------------------------------------
+ Desde aqui hacia abajo es el css correspondiente a cada pagina 
+-------------------------------------------------------------------*/
+
+/*SECTOR VIDEO PROMOCIONAL*/
+/*----------------------------------*/
+.barra-video{ /*parche momentaneo*/
+    color: white;
+}
+
+#banner{
+    min-height: 70vh;
+    position: relative;
+}
+
+video{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    background-color: #1E1E1E;
+}
+
+.text-promo{
+    padding-top: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: serif;
+}
+
+/*----------------------------------*/
+/*SECTOR RESERVA*/
+/*----------------------------------*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    justify-content: space-between !important;
+    margin: 0 50px;
+  }
+  
+  input {
+    outline: none;
+    border: none;
+    width: 100%;
+    
+  }
+  
+.revisar{
+    padding: 0 10px;
+}
+
+.reserva {
+    padding: 20px 0;
+    background: #1E1E1E;
+    color: #fff;
+}
+
+
+.reserva h1 {
+    font-size: 28px;
+  }
+  
+.reserva h1 span {
+    color: #e3bb41;
+  }
+  
+.reserva input {
+
+    padding: 10px;
+  }
+  
+.boton_reserva {
+    background: #e3bb41;
+    color: #fff;
+  }
+
+.text{
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+}
+.text h1 {
+    margin: 10px 0 0 40px;
+    font-family: serif;
+  }
+
+
+/*----------------------------------*/
+/* GRID SECCION NOSOTROS*-----------/
+/*----------------------------------*/
+
+/* aqui creamos el titulo para que aparezca uno adelante y "en Chile" atras dando efecto revista */
+  
+.top {
+    margin-top: 40px;
+  }
+  
+.mtop {
+    margin-top: 40px;
+  }
+
+.titulo-descrip{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+  
+.titulo-descrip h1 {
+    font-size: 100px;
+    font-weight: 500;
+    opacity: 0.1;
+    font-family: serif;
+    position: relative;
+    
+  }
+
+  
+.bienvenida{
+    padding: 0 30px 0 30px;
+}
+
+.titulo-descrip h2 {
+    font-size: 45px;
+    font-family: serif;
+    font-weight: 400;
+    position: absolute;
+    display: flex;
+  }
+
+  
+.nosotros {
+    position: relative;
+  }
+
+  
+.nosotros p {
+    font-size: 17px;
+    text-align: justify;
+    padding: 0 60px 0 0;
+
+    
+  }
+  
+.btn-conocer {
+    font-size: 18px;
+    margin-top: 50px;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e3bb41;
+    color: white;
+}
+
+
+.carro-imagenes img{
+    width: 100% !important;
+  }
+
+/*con los grid de abajo, haremos que se separe el texto del carrusel de imagenes, y que cuando se utilicen dispositivos mas pequeños, 
+el carrusel se ubique bajo el texto*/
+
+.grid-nosotros {
+    display: grid;
+    gap: 10px;
+    grid-template-columns:  50% 50%;
+    grid-template-rows: auto;
+}
+.grid-nosotros-1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+.grid-nosotros-2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.grid-nosotros-2 img{
+    width: 100%;
+}
+
+/*----------------------------------*/
+/* FIN GRID SECCION NOSOTROS
+/*----------------------------------*/
+
+
+
+/*----------------------------------*/
+/*CATEGORIAS*/
+/*----------------------------------*/
+
+.titulo-categorias {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 0 50px 0;
+}
+
+  
+.titulo-categorias h1 {
+    font-size: 70px;
+    font-weight: 500;
+    opacity: 0.9;
+    font-family: serif;
+    position: relative;
+}
+
+.titulo-categorias h2 {
+    font-size: 70px;
+    font-family: serif;
+    font-weight: 400;
+    position: absolute;
+    display: flex;
+    transform: translateX(10px);
+    opacity: 0.2;
+}
+
+.box-categorias {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 0px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.box-contenido {
+    width: 80%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    filter: contrast(90%);
+    
+}
+
+.box-contenido img{
+    width: 100%;  
+    filter: brightness(40%);
+    transition: filter 0.3s ease;
+}
+.box-contenido:hover img{
+    filter: brightness(70%);
+}
+
+.box-info {
+    position: absolute;
+    pointer-events: auto;
+    pointer-events: none;
+}
+
+.box-titulo {
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+    padding: 0 0 30px 0;
+  
+}
+
+.box-info a{
+    padding: 20px 22px;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    pointer-events: auto;
+}
+.box-info i{
+    font-size: 10px;
+    padding: 0 0 0 10px;
+   
+}
+
+
+/*----------------------------------*/
+/* SERVICIOS
+/*----------------------------------*/
+.titulo-descrip-serv{
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 60px 0 0 0;
+}
+  
+.titulo-descrip-serv h1 {
+    font-size: 70px;
+    font-weight: 500;
+    opacity: 0.5;
+    font-family: serif;
+    position: relative;
+    
+  }
+.iconos-hotel {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    padding: 20px 20px 60px 20px;
+    align-items: center;
+}
+
+.iconos-hotel p {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+
+
+}
+
+.iconos-hotel img {
+    width: 100%;
+    padding: 10px 20px 0 20px;
+    transition: transform 0.4s;
+
+}
+
+.iconos-hotel img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+
+}
+/*----------------------------------*/
+/* FIN SERVICIOS
+/*----------------------------------*/
+
+/*-------------------------------------------------------------------
+ Desde aqui hacia arriba es el css correspondiente a cada pagina 
+-------------------------------------------------------------------*/
+@media only screen and (min-width: 1100px){
+    .titulo-categorias {
+        position: relative;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        padding: 0 0 50px 0;
+    }
+
+      
+    .titulo-categorias h1 {
+        font-size: 70px;
+        font-weight: 500;
+        opacity: 0.9;
+        font-family: serif;
+        position: relative;
+    }
+
+    .titulo-categorias h2 {
+        font-size: 70px;
+        font-family: serif;
+        font-weight: 400;
+        position: absolute;
+        display: flex;
+        transform: translateX(10px);
+        opacity: 0.2;
+    }
+
+    .box-categorias {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0px;
+        justify-content: center;
+    }
+    .box-contenido {
+        width: 25%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        filter: contrast(90%);
+        
+    }
+   
+    .box-contenido img{
+        width: 100%;  
+        filter: brightness(40%);
+        transition: filter 0.3s ease;
+    }
+    .box-contenido:hover img{
+        filter: brightness(70%);
+    }
+    
+    .box-info {
+        position: absolute;
+        pointer-events: auto;
+        pointer-events: none;
+    }
+
+    .box-titulo {
+        font-size: 40px;
+        font-weight: 700;
+        color: white;
+        padding: 0 0 30px 0;
+      
+    }
+   
+    .box-info a{
+        padding: 20px 22px;
+        border: 1px solid white;
+        text-decoration: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 5px;
+        pointer-events: auto;
+    }
+    .box-info i{
+        font-size: 10px;
+        padding: 0 0 0 10px;
+       
+    }
+
+    /* servicios */
+
+    .iconos-hotel {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: auto;
+        padding: 30px 20px 60px 20px;
+        align-items: center;
+    }
+
+    .iconos-hotel p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 0;
+    }
+
+    /* servicios */
+
+}
