@@ -3,6 +3,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.servicio1, name='servicio1'),
+    path('servicio', views.servicio, name='servicio'),
     # Agrega tus rutas aquí
 ]

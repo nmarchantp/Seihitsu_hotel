@@ -1,0 +1,22 @@
+/*-------------------------------------------------------------------
+ Desde aqui hacia abajo es el css correspondiente a cada pagina 
+-------------------------------------------------------------------*/
+
+.portada-habitacion {
+    margin: 150px 0 0 0;
+    padding: 60px 0;
+    text-align: center;
+    border: 1px solid #c7c7c7;
+    border-right: 0;
+    border-left: 0;
+}
+.portada-habitacion h1{
+    font-size: 50px;
+}
+
+
+
+
+/*-------------------------------------------------------------------
+ Desde aqui hacia arriba es el css correspondiente a cada pagina 
+-------------------------------------------------------------------*/

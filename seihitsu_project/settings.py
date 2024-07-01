@@ -128,7 +128,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'clientes')
+    BASE_DIR/"static",
+    #Aqui hay que dejar todas las app que tengan una carpeta static!
+    os.path.join(BASE_DIR, 'clientes'),
+    os.path.join(BASE_DIR, 'servicios'),
+    os.path.join(BASE_DIR, 'usuarios')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
