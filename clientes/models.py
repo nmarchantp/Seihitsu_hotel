@@ -21,7 +21,7 @@ class TipoCliente(models.Model):
 class Cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
     id_tipo_cliente = models.ForeignKey(TipoCliente, on_delete=models.CASCADE, related_name='clientes')
-    id_user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    id_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cliente_usuario')
     numero_identificacion = models.CharField(max_length=10)
     nombre = models.CharField(max_length=100)
     segundo_nombre = models.CharField(max_length=50, blank=True)
