@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 
 class RegistroUsuarioForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    # email = forms.EmailField(required=True)
 
     class Meta:
         model = User
@@ -15,9 +15,11 @@ class RegistroUsuarioForm(UserCreationForm):
             'password2': 'Confirmar contraseña',
         }
         #aca van las clases
-        widgets= {
-
-
+        widgets = {
+            'username': forms.TextInput(attrs={'placeholder': 'Nombre de usuario', 'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Correo electrónico', 'class': 'form-control'}),
+            'password1': forms.PasswordInput(attrs={'placeholder': 'Contraseña', 'class': 'form-control'}),
+            'password2': forms.PasswordInput(attrs={'placeholder': 'Confirmar contraseña', 'class': 'form-control'}),
         }
         error_messages = {
             'username': {
@@ -45,7 +47,7 @@ class RegistroUsuarioForm(UserCreationForm):
 
     def __init__(self, *args, **kwargs):
         super(RegistroUsuarioForm, self).__init__(*args, **kwargs)
-        for fieldname in ['username', 'password1', 'password2']:
+        for fieldname in ['username', 'email', 'password1', 'password2']:
             self.fields[fieldname].help_text = None
 
 
