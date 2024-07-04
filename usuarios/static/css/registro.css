@@ -14,8 +14,48 @@
     font-size: 50px;
 }
 
+.btn-registrar{
+    font-size: 18px;
+    margin-top: 50px;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #e3bb41;
+    color: white;
+}
 
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.errorlist {
+    color: red;
+    margin-top: 5px;
+}
+.errorlist li {
+    list-style-type: none;
+}
 
+.form-control {
+    border: 1px solid #ccc; 
+    padding: 10px;
+    border-radius: 4px;
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
 
 /*-------------------------------------------------------------------
  Desde aqui hacia arriba es el css correspondiente a cada pagina 
