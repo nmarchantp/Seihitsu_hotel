@@ -191,6 +191,7 @@ section{
     align-items: center;
     color: white;
     margin-top: 8px;
+    padding: 0 5px;
 }
 
 .usuario a:hover{

@@ -16,8 +16,8 @@ class RegistroUsuarioForm(UserCreationForm):
         }
         #aca van las clases
         widgets = {
-            'username': forms.TextInput(attrs={'placeholder': 'Nombre de usuario', 'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'Correo electrónico', 'class': 'form-control'}),
+            'username': forms.TextInput(attrs={'placeholder': 'Escribe tu nombre de usuario', 'class': 'form-control'}),
+            'email': forms.EmailInput(attrs={'placeholder': 'Escribe tu correo electrónico', 'class': 'form-control'}),
             'password1': forms.PasswordInput(attrs={'placeholder': 'Contraseña', 'class': 'form-control'}),
             'password2': forms.PasswordInput(attrs={'placeholder': 'Confirmar contraseña', 'class': 'form-control'}),
         }
