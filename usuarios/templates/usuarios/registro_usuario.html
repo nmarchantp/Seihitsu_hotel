@@ -15,67 +15,86 @@
 {% block content %}
 <!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
 <div class="portada-habitacion">
-    <h1>Registro</h1>
+    <h1>Club de Miembros Seihitsu</h1>
 </div>
 
 
 
 <!-- esto es el login -->
-<div class="container-center">
-    <form method="post">
-        {% csrf_token %}
+<div class="grid-club-members">
+    <div class="grid-club-members-1">
+        <div class="container">
+            <div class="box-registro">
+                <h1>Registrate</h1>
+                <form method="post" class="formulario-reg">
+                    {% csrf_token %}
 
-        <div>
-            <label for="{{ form.username.id_for_label }}">Nombre de usuario:</label>
-            {{ form.username }}
-            {% if form.username.errors %}
-                <ul class="errorlist">
-                    {% for error in form.username.errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
+                    <div class="datos">
+                        <label for="{{ form.username.id_for_label }}" class="label">Nombre de usuario:</label>
+                        {{ form.username }}
+                        {% if form.username.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.username.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+
+                    <div class="datos">
+                        <label for="{{ form.email.id_for_label }}">Correo electrónico:</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.email.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+
+                    <div class="datos">
+                        <label for="{{ form.password1.id_for_label }}">Contraseña:</label>
+                        <input type="password" class="form-control" name="{{form.password1.html_name}}"
+                            placeholder="Escribe tu contraseña">
+                        {% if form.password1.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.password1.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+
+                    <div class="datos">
+                        <label for="{{ form.password2.id_for_label }}">Confirmar contraseña:</label>
+                        <input type="password" class="form-control" name="{{form.password2.html_name}}"
+                            placeholder="Confirma tu contraseña">
+                        {% if form.password2.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.password2.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    <div class="btn-formu">
+                        <button type="submit" class="btn-registrar">Registrarse</button>
+                    </div>
+                </form>
+                <div class="pregunta-form">
+                    <p>¿Ya tienes una cuenta? <a href="{% url 'login' %}"> Iniciar Sesión</a></p>
+                </div>
+            </div>
         </div>
-
-        <div>
-            <label for="{{ form.email.id_for_label }}">Correo electrónico:</label>
-            {{ form.email }}
-            {% if form.email.errors %}
-                <ul class="errorlist">
-                    {% for error in form.email.errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-
-        <div>
-            <label for="{{ form.password1.id_for_label }}">Contraseña:</label>
-            <input type="password" class="form-control" name="{{form.password1.html_name}}">
-            {% if form.password1.errors %}
-                <ul class="errorlist">
-                    {% for error in form.password1.errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-
-        <div>
-            <label for="{{ form.password2.id_for_label }}">Confirmar contraseña:</label>
-            <input type="password" class="form-control" name="{{form.password2.html_name}}">
-            {% if form.password2.errors %}
-                <ul class="errorlist">
-                    {% for error in form.password2.errors %}
-                        <li>{{ error }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        </div>
-
-        <button type="submit">Registrarse</button>
-    </form>
+    </div>
+    <div class="grid-club-members-2">
+        <img src="{% static 'images/cards.png' %}" alt="">
+    </div>
 </div>
+
+
+
 
 
 
