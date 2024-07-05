@@ -27,35 +27,7 @@
     <button type="submit" class="btn btn-primary">Iniciar sesión</button>
 </form>
 
- <!--------------------------------------------Aqui termina el contenido diferente de cada página---------------------------------------->
-
-
-<!-- ejemplo -->
-
-    <!-- ------------------------------- -->
-
-    <h1>Formulario Cliente</h1>
-    <form method="post">
-        {% csrf_token %}
-        <!-- Añade clases CSS adicionales según necesites -->
-        <div class="form-group">
-            {{ form.id_tipo_cliente.label_tag }}
-            {{ form.id_tipo_cliente }}
-        </div>
-        <div class="form-group">
-            {{ form.numero_identificacion.label_tag }}
-            {{ form.numero_identificacion }}
-        </div>
-        <div class="form-group">
-            {{ form.nombre.label_tag }}
-            {{ form.nombre }}
-        </div>
-        <div class="form-group">
-            {{ form.apellido.label_tag }}
-            {{ form.apellido }}
-        </div>
-        Añade más campos según necesites
-
+ 
 
 <!--Aqui termina el contenido diferente de cada página-->
     {% endblock %}
