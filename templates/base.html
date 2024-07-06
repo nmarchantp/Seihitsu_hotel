@@ -41,14 +41,26 @@
 
                 </div>
                 <div class="d-flex usuario">
-                    <a class="nav-link logo2" href="{% url 'login' %}" role="button"
+                    {% if user.is_authenticated %}
+                    <i class="fa-solid fa-user"></i>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{ user.username }}
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="{% url 'perfil'%}">Perfil</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="{% url 'logout_sesion' %}">Cerrar Sesión</a></li>
+                        </ul>
+                      </li>
+                  </ul>
+                  {% else %}
+                  <a class="nav-link logo2" href="{% url 'login' %}" role="button"
                         aria-expanded="false">Iniciar Sesión</a>
                         <p>/</p>
                     <a class="nav-link logo2" href="{% url 'registro' %}" role="button"
                         aria-expanded="false">Registrarse</a>
-                    
-                    <i class="fa-solid fa-user"></i>
-
+                  {% endif %}
                 </div>
             </div>
         </div>

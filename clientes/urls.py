@@ -1,10 +1,11 @@
 # clientes/urls.py
 from django.urls import path
-from . import views
+from .views import crear_cliente,perfil
 
-app_name = 'clientes'
+# app_name = 'clientes'
 
 urlpatterns = [
-    path('crear/', views.crear_cliente, name='crear_cliente'),
+    path('crear/', crear_cliente, name='crear_cliente'),
+    path('perfil/',perfil, name='perfil')
    
 ]
