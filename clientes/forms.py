@@ -57,11 +57,11 @@ class PerfilForm(forms.ModelForm):
 class TarjetaCreditoForm(forms.ModelForm):
     class Meta:
         model = TarjetaCredito
-        fields = ['numero_tarjeta', 'nombre_titular', 'fecha_expiracion', 'cvv_encrypted']
+        fields = ['numero_tarjeta', 'nombre_titular', 'fecha_expiracion']
 
     def save(self, commit=True):
         tarjeta_credito = super().save(commit=False)
-        if commit:
-            tarjeta_credito.set_cvv(self.cleaned_data['cvv'])  # Cifrar el CVV antes de guardar
+        tarjeta_credito.set_cvv(self.cleaned_data['cvv'])  
+        if commit:            
             tarjeta_credito.save()
         return tarjeta_credito
