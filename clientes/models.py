@@ -73,7 +73,7 @@ class TarjetaCredito(models.Model):
     numero_tarjeta = models.CharField(max_length=16, unique=True)
     nombre_titular = models.CharField(max_length=100)
     fecha_expiracion = models.DateField()
-    cvv_encrypted = models.BinaryField()  # Campo para almacenar el CVV cifrado
+    cvv_encrypted = models.BinaryField(null=True)  # Campo para almacenar el CVV cifrado
 
     def __str__(self):
         return f'Tarjeta {self.numero_tarjeta[-4:]} de {self.id_cliente}'
