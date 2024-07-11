@@ -57,7 +57,7 @@ class PerfilForm(forms.ModelForm):
 class TarjetaCreditoForm(forms.ModelForm):
     class Meta:
         model = TarjetaCredito
-        fields = ['numero_tarjeta', 'nombre_titular', 'fecha_expiracion', 'cvv']
+        fields = ['numero_tarjeta', 'nombre_titular', 'fecha_expiracion', 'cvv_encrypted']
 
     def save(self, commit=True):
         tarjeta_credito = super().save(commit=False)
