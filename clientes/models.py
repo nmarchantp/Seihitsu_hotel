@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from utilidades.models import *
 from django.contrib.auth.models import User
+from cryptography.fernet import Fernet
 
 # Create your models here.
 
@@ -21,7 +22,7 @@ class TipoCliente(models.Model):
 class Cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
     id_tipo_cliente = models.ForeignKey(TipoCliente, on_delete=models.CASCADE, related_name='clientes')
-    id_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cliente_usuario')
+    id_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, related_name='cliente_usuario')
     numero_identificacion = models.CharField(max_length=10)
     nombre = models.CharField(max_length=100)
     segundo_nombre = models.CharField(max_length=50, blank=True)
@@ -63,17 +64,30 @@ class MetodoPago(models.Model):
         db_table = 'metodo_pago'
 
 #Si el tipo de meetodo de pago es credito, debe guardar los datos en tarjeta de credito    
+key = Fernet.generate_key()
+cipher_suite = Fernet(key)
+
 class TarjetaCredito(models.Model):
     id_tarjeta = models.AutoField(primary_key=True)
     id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='tarjetas_credito')
     numero_tarjeta = models.CharField(max_length=16, unique=True)
     nombre_titular = models.CharField(max_length=100)
     fecha_expiracion = models.DateField()
-    cvv = models.CharField(max_length=4)
+    cvv_encrypted = models.BinaryField(null=True)  # Campo para almacenar el CVV cifrado
+
     def __str__(self):
         return f'Tarjeta {self.numero_tarjeta[-4:]} de {self.id_cliente}'
+
+    def set_cvv(self, cvv):
+        # Método para cifrar y establecer el CVV
+        self.cvv_encrypted = cipher_suite.encrypt(cvv.encode())
+
+    def get_cvv(self):
+        # Método para descifrar y obtener el CVV
+        decrypted_cvv = cipher_suite.decrypt(self.cvv_encrypted).decode()
+        return decrypted_cvv
+
     class Meta:
         verbose_name = 'Tarjeta de Crédito'
-        verbose_name_plural = 'Tarjetas de Crédito'    
+        verbose_name_plural = 'Tarjetas de Crédito'
         db_table = 'tarjeta_credito'
-

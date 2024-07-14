@@ -1,7 +1,8 @@
 # usuarios/views.py
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import RegistroUsuarioForm
 
@@ -29,9 +30,22 @@ def login_usuario(request):
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
             if user is not None:
+                print("Usuario autenticado...")
                 login(request, user)
                 # Redirige a donde desees después del login
-                return redirect('index')  # Cambia 'index' por tu página deseada
+                return redirect('perfil')  # Cambia 'index' por tu página deseada
+            else:
+                return render(request,'alumnos/login.html')
     else:
         form = AuthenticationForm()
     return render(request, 'usuarios/login_usuario.html', {'form': form})
+
+def logout_sesion(request):
+    try:
+        logout(request)
+        return redirect('index')
+    except:
+        print("Error, no se pudo cerrar sesion...")
+        return redirect('index')
+    
+

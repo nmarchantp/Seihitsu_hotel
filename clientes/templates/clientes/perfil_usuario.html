@@ -1,0 +1,27 @@
+<!-- clientes/templates/clientes/perfil.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
+{% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}  
+
+<!-- -------------------------------------------------------------------------- -->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+<!-- -------------------------------------------------------------------------- -->
+{% block content %}
+<!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
+<div class="portada-habitacion">
+    <h1>Agregar Perfil</h1>
+</div>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+ <!--Aqui termina el contenido diferente de cada página-->
+    {% endblock %}
