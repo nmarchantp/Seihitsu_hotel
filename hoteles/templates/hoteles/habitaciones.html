@@ -1,0 +1,123 @@
+<!-- templates/cliente_register_login.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
+{% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/habitaciones.css' %}">
+{% endblock %}
+<!-- -------------------------------------------------------------------------- -->
+{% block content %}
+<!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
+<div class="portada-habitacion">
+    <h1>Habitaciones</h1>
+</div>
+
+    <!-- HABITACIONES -->
+    
+    <section class="nosotros top">
+        <div class="container-center bienvenida">
+            <div class="grid-nosotros">
+                <div class="col heading grid-nosotros-1">
+                    <div class="titulo-descrip">
+                        <h1>ELEGANCIA</h1>
+                        
+                    </div>
+                    <p>
+                        Nuestras habitaciones en Seihitsu Santiago combinan la elegancia del estilo japonés con el lujo moderno. Ofrecemos tres tipos: estándar, más amplias y confortables; superior, con mayor espacio y comodidades adicionales; y suite de lujo, para una experiencia excepcional con todos los detalles y servicios premium.
+                        <br>
+                        <br>
+                        <b>Cada habitación cuenta con servicios base:</b>
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-shower" style="color: #1e1e1e;"></i> Baño privado
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-bell-concierge" style="color: #1e1e1e;"></i> Servicio a la habitación
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-wifi" style="color: #1e1e1e;"></i> Wi-Fi gratuito
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-tv" style="color: #1e1e1e;"></i> TV de pantalla plana
+                    </p>
+                        
+                    </p>
+                
+                </div>
+                <div class="grid-nosotros-2 contenedor-imagen">
+                    <div class="box-categorias">
+            
+                        <div class="box-contenido">
+                            <img src="../img/habitaciones/habitacion-portada.jpg" alt="">
+                            <div class="box-info">
+                                <h3 class="box-titulo">Santiago</h3>
+                                <a href="./habitaciones-santiago.html">Más información <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></a>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="nosotros top">
+        <div class="container-center bienvenida">
+            <div class="grid-nosotros">
+                <div class="col heading grid-nosotros-1">
+                    <div class="titulo-descrip">
+                        <h1>TRANQUILIDAD</h1>
+                       
+                    </div>
+                    <p>
+                        Nuestras habitaciones en Seihitsu Viña del Mar están diseñadas para el máximo relajo y descanso, inmersas en un ambiente tradicional japonés. Ofrecemos tres tipos: estándar, acogedoras y serenas; superior, con mayor espacio y vistas a la naturaleza; y suite de lujo, para una experiencia completa y exclusiva de Japón en Chile, con todas las comodidades premium.
+                        <br>
+                        <br>
+                        <b>Cada habitación cuenta con servicios base:</b>
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-shower" style="color: #1e1e1e;"></i> Baño privado
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-bell-concierge" style="color: #1e1e1e;"></i> Servicio a la habitación
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-wifi" style="color: #1e1e1e;"></i> Wi-Fi gratuito
+                        <br>
+                        <br>
+                        <i class="fa-solid fa-tv" style="color: #1e1e1e;"></i> TV de pantalla plana
+                    </p>
+                
+                </div>
+                <div class="grid-nosotros-2 contenedor-imagen">
+                    <div class="box-categorias">
+            
+                        <div class="box-contenido">
+                            <img src="../img/habitaciones/habitacion-portada.jpg" alt="">
+                            <div class="box-info">
+                                <h3 class="box-titulo">Viña del Mar</h3>
+                                <a href="./habitaciones-vina.html">Más información <i class="fa-solid fa-chevron-right" style="color: #ffffff;"></i></a>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+
+
+
+
+
+<!--Aqui termina el contenido diferente de cada página-->
+{% endblock %}
