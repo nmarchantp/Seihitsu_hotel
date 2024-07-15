@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Detalles de la Habitación</h2>
+    <p>Habitación: {{ habitacion.numero_habitacion }}</p>
+    <p>Piso: {{ habitacion.piso }}</p>
+    <p>Cantidad de Camas: {{ habitacion.cantidad_camas }}</p>
+    <!-- Otros detalles de la habitación -->
+
+    <form method="post" action="{% url 'reservar_habitacion' habitacion_id=habitacion.id_habitacion %}">
+        {% csrf_token %}
+        <!-- Puedes incluir otros campos del formulario si los necesitas -->
+        <button type="submit">Reservar</button>
+    </form>
+{% endblock %}

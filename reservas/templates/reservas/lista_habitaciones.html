@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Lista de Habitaciones Disponibles</h1>
+    {% for habitacion in habitaciones %}
+        <div>
+            <h2>Habitación {{ habitacion.numero_habitacion }}</h2>
+            <p>Precio por noche: {{ habitacion.precio_por_noche }}</p>
+            <!-- Otros detalles de la habitación -->
+            <form method="post" action="{% url 'reservar_habitacion' habitacion_id=habitacion.id_habitacion %}">
+                {% csrf_token %}
+                <!-- Puedes incluir más campos del formulario aquí -->
+                <button type="submit">Reservar</button>
+            </form>
+        </div>
+    {% endfor %}
+{% endblock %}
