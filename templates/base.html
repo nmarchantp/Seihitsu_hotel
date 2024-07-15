@@ -72,7 +72,7 @@
 
             <nav class="navbar opciones-menu">
                 <a href="../html/nosotros.html">Nosotros</a>
-                <a href="">Habitaciones</a>
+                <a href="{% url 'habitaciones' %}">Habitaciones</a>
                 <a href="../html/restaurantes.html">Restaurantes</a>
                 <a href="../html/eventos.html">Eventos</a>
                 <a href="{% url 'servicio' %}">Servicios</a>
@@ -126,7 +126,7 @@
                 <a href="#"> <i class="fas fa-arrow-right"></i> Habitaciones</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i> Restaurantes</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i> Salones y Eventos</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Servicios</a>
+                <a href="{% url 'servicio' %}"> <i class="fas fa-arrow-right"></i> Servicios</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i> Contacto</a>
             </div>
 
