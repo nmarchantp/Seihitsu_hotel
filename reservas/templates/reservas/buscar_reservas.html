@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <h2>Buscar Habitaciones Disponibles</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Buscar</button>
+  </form>
+
+  {% if basic_count or premium_count or suit_count %}
+    <h3>Habitaciones Disponibles</h3>
+    <ul>
+      <li>
+        <span>Basic: {{ basic_count }}</span>
+        {% if basic_count > 0 %}
+          <form method="post" action="{% url 'reservar_habitacion' %}">
+            {% csrf_token %}
+            <input type="hidden" name="tipo_habitacion" value="Basic">
+            <button type="submit">Reservar</button>
+          </form>
+        {% endif %}
+      </li>
+      <li>
+        <span>Premium: {{ premium_count }}</span>
+        {% if premium_count > 0 %}
+          <form method="post" action="{% url 'reservar_habitacion' %}">
+            {% csrf_token %}
+            <input type="hidden" name="tipo_habitacion" value="Premium">
+            <button type="submit">Reservar</button>
+          </form>
+        {% endif %}
+      </li>
+      <li>
+        <span>Suit: {{ suit_count }}</span>
+        {% if suit_count > 0 %}
+          <form method="post" action="{% url 'reservar_habitacion' %}">
+            {% csrf_token %}
+            <input type="hidden" name="tipo_habitacion" value="suit">
+            <button type="submit">Reservar</button>
+          </form>
+        {% endif %}
+      </li>
+    </ul>
+  {% else %}
+    <p>No hay habitaciones disponibles para las fechas seleccionadas en {{ form.cleaned_data.nombre_hotel }}</p>
+  {% endif %}
+{% endblock %}
