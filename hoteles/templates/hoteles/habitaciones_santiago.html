@@ -1,0 +1,557 @@
+<!-- templates/cliente_register_login.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
+{% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/habitacion_sucursal.css' %}">
+{% endblock %}
+<!-- -------------------------------------------------------------------------- -->
+{% block content %}
+<!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
+<div class="portada-habitacion">
+    <h1>Habitaciones Santiago</h1>
+</div>
+
+<!-- HABITACIONES -->
+<div class="container-center">
+    <div class="main">
+
+        <div class="botones">
+            <button class="normal-btn btn-room">Standard Suite</button>
+            <button class="super-btn btn-room">Super Suite</button>
+            <button class="premium-btn btn-room">Premium Suite</button>
+        </div>
+        <!-- AQUI VA TODO EL CONTENIDO DE LAS HABITACIONES EN GENERAL -->
+        <div class="content">
+            <!-- TODO EL CONTENIDO DE LAS HABITACIONES NORMALES -->
+            <div class="normal">
+                <section class="nosotros top">
+                    <div class="container-center bienvenida">
+                        <div class="grid-nosotros">
+                            <div class="col heading grid-nosotros-1">
+                                <div class="titulo-descrip">
+                                    <h1>| STANDARD SUITE</h1>
+                                    <h2></h2>
+                                </div>
+                                <p>
+                                    Nuestra Suite Standard ofrece un refugio de tranquilidad y elegancia, inspirado en el minimalismo japonés. Disfrute de una cama queen-size con sábanas de algodón egipcio y un baño privado con ducha tipo lluvia. La habitación cuenta con un escritorio de trabajo, TV de pantalla plana, Wi-Fi gratuito y un mini bar. Los detalles en madera y los toques de diseño tradicional japonés crean una atmósfera serena y acogedora.
+                                </p>
+                                <p>
+                                    Comodidades
+                                </p>
+                                <div class="servicios-box">
+                                    <div class="servicios-box-hijo">
+                                        <div class="box-hijo-1">
+                                            <ul>
+                                                <li><i class="fas fa-arrow-right"></i> Servicio a la habitación </li>
+                                                <li><i class="fas fa-arrow-right"></i> Toallas, bata y pantuflas </li>
+                                                <li><i class="fas fa-arrow-right"></i> Secador de pelo </li>
+                                                <li><i class="fas fa-arrow-right"></i> Canales nacionales e internacionales</li>
+                                            </ul>
+                                        </div>
+                                        <ul>
+                                            <li><i class="fas fa-arrow-right"></i> Caja fuerte</li>
+                                            <li><i class="fas fa-arrow-right"></i> Aire acondicionado</li>
+                                            <li><i class="fas fa-arrow-right"></i> Estación de té y café</li>
+                                            <li><i class="fas fa-arrow-right"></i> Productos de aseo</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="btn-reserva">
+                                    <button class="btn-conocer">RESERVAR AHORA</button>
+                                </div>
+                            </div>
+                            <div class="grid-nosotros-2 contenedor-imagen">
+                                <div id="carouselExampleAutoplaying" class="carousel slide superior-carro"
+                                    data-bs-ride="carousel">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleAutoplaying"
+                                            data-bs-slide-to="0" class="active" aria-current="true"
+                                            aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleAutoplaying"
+                                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleAutoplaying"
+                                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <a href="./registro.html"><img src="../img/seihitsu_hotel/cancha.jpg"
+                                                    class="d-block w-100" alt="..."></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="./detalle_producto.html"><img
+                                                    src="../img/seihitsu_hotel/eventos.jpg" class="d-block w-100"
+                                                    alt="..."></a>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <a href="./detalle_producto.html"><img
+                                                    src="../img/seihitsu_hotel/spa.jpg" class="d-block w-100"
+                                                    alt="..."></a>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button"
+                                        data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button"
+                                        data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--NUESTROS SERVICIOS RESUMEN-->
+
+                <div class="bg-categ-serv top container-center">
+                    <div class="bienvenida">
+                        <div class="titulo-descrip-serv">
+                            <h1>SERVICIOS</h1>
+
+                        </div>
+                    </div>
+                    <div class="iconos-hotel">
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_tour.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Tour</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_rser.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Restaurantes</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_wifi.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Wi-fi</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_lav.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Lavandería</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_spa.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Spa</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_gym.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Gimnasio</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_pool.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Piscina/Termas</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="../html/servicios.html"><img src="../img/servicios/servicio_cancha.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Cancha de tenis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END -->
+        </div>
+
+
+
+        <!-- END -->
+
+        <!-- TODO EL CONTENIDO DE LAS HABITACIONES SUPER -->
+        <div class="super">
+            <section class="nosotros top">
+                <div class="container-center bienvenida">
+                    <div class="grid-nosotros">
+                        <div class="col heading grid-nosotros-1">
+                            <div class="titulo-descrip">
+                                <h1>| SUPER SUITE</h1>
+                                <h2></h2>
+                            </div>
+                            <p>
+                                La Suite Super eleva su experiencia de estancia con mayor espacio y comodidad. Ofrece una cama king-size con sábanas de alta calidad, un baño privado con bañera y ducha separadas, así como productos de aseo premium. Además, cuenta con una zona de estar con sofás, escritorio de trabajo, TV de pantalla plana con canales internacionales, Wi-Fi gratuito, y un mini bar surtido. El diseño combina la elegancia moderna con elementos tradicionales japoneses, proporcionando un ambiente relajante y sofisticado.
+                            </p>
+                            <p>
+                                Comodidades
+                            </p>
+                            <div class="servicios-box">
+                                <div class="servicios-box-hijo">
+                                    <div class="box-hijo-1">
+                                        <ul>
+                                            <li><i class="fas fa-arrow-right"></i> Cama King-size </li>
+                                            <li><i class="fas fa-arrow-right"></i> Baño con ducha y bañera separadas </li>
+                                            <li><i class="fas fa-arrow-right"></i> Productos de aseo de alta calidad</li>
+                                            <li><i class="fas fa-arrow-right"></i> Mini-Bar surtido</li>
+                                        </ul>
+                                    </div>
+                                    <ul>
+                                        <li><i class="fas fa-arrow-right"></i> Wi-fi </li>
+                                        <li><i class="fas fa-arrow-right"></i> Aire acondicionado</li>
+                                        <li><i class="fas fa-arrow-right"></i> Mesa de trabajo</li>
+                                        <li><i class="fas fa-arrow-right"></i> Tv pantalla plana con canales internacionales</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-reserva">
+                                <button class="btn-conocer">RESERVAR AHORA</button>
+                            </div>
+                        </div>
+                        <div class="grid-nosotros-2 contenedor-imagen">
+                            <div id="carouselExampleAutoplaying2" class="carousel slide superior-carro"
+                                data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleAutoplaying2"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleAutoplaying2"
+                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleAutoplaying2"
+                                        data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a href="./registro.html"><img src="../img/seihitsu_hotel/cancha.jpg"
+                                                class="d-block w-100" alt="..."></a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a href="./detalle_producto.html"><img
+                                                src="../img/seihitsu_hotel/eventos.jpg" class="d-block w-100"
+                                                alt="..."></a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a href="./detalle_producto.html"><img src="../img/seihitsu_hotel/spa.jpg"
+                                                class="d-block w-100" alt="..."></a>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying2" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying2" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--NUESTROS SERVICIOS RESUMEN-->
+
+            <div class="bg-categ-serv top container-center">
+                <div class="bienvenida">
+                    <div class="titulo-descrip-serv">
+                        <h1>SERVICIOS</h1>
+
+                    </div>
+                </div>
+                <div class="iconos-hotel">
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_tour.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Tour</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_rser.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Restaurantes</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_wifi.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Wi-fi</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_lav.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Lavandería</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_spa.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Spa</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_gym.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Gimnasio</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_pool.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Piscina/Termas</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="../html/servicios.html"><img src="../img/servicios/servicio_cancha.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Cancha de tenis</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END -->
+
+        <!-- TODO EL CONTENIDO DE LAS HABITACIONES PREMIUM -->
+        <div class="premium">
+            <section class="nosotros top">
+                <div class="container-center bienvenida">
+                    <div class="grid-nosotros">
+                        <div class="col heading grid-nosotros-1">
+                            <div class="titulo-descrip">
+                                <h1>| PREMIUM SUITE</h1>
+                                <h2></h2>
+                            </div>
+                            <p>
+                                Nuestra Suite Premium ofrece una experiencia exclusiva de máximo confort y lujo. Esta espaciosa suite incluye una cama king-size con sábanas de seda, un amplio baño privado con bañera japonesa de madera hinoki, ducha de efecto lluvia y productos de aseo de lujo. La suite cuenta con una sala de estar independiente, un comedor pequeño, un escritorio ejecutivo, dos TV de pantalla plana con canales internacionales, Wi-Fi gratuito, y un mini bar premium. Las amplias ventanas ofrecen vistas panorámicas, mientras que la decoración combina sofisticación moderna con toques tradicionales japoneses, creando un ambiente de serenidad y exclusividad.
+                            </p>
+                            <p>
+                                Comodidades
+                            </p>
+                            <div class="servicios-box">
+                                <div class="servicios-box-hijo">
+                                    <div class="box-hijo-1">
+                                        <ul>
+                                            <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                            <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                            <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                            <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                        </ul>
+                                    </div>
+                                    <ul>
+                                        <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                        <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                        <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                        <li><i class="fas fa-arrow-right"></i> saddsasda</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-reserva">
+                                <button class="btn-conocer">RESERVAR AHORA</button>
+                            </div>
+                        </div>
+                        <div class="grid-nosotros-2 contenedor-imagen">
+                            <div id="carouselExampleAutoplaying3" class="carousel slide superior-carro"
+                                data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#carouselExampleAutoplaying3"
+                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                        aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#carouselExampleAutoplaying3"
+                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#carouselExampleAutoplaying3"
+                                        data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <a href="./registro.html"><img src="../img/seihitsu_hotel/cancha.jpg"
+                                                class="d-block w-100" alt="..."></a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a href="./detalle_producto.html"><img
+                                                src="../img/seihitsu_hotel/eventos.jpg" class="d-block w-100"
+                                                alt="..."></a>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <a href="./detalle_producto.html"><img src="../img/seihitsu_hotel/spa.jpg"
+                                                class="d-block w-100" alt="..."></a>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying3" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                    data-bs-target="#carouselExampleAutoplaying3" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--NUESTROS SERVICIOS RESUMEN-->
+
+            <div class="bg-categ-serv top container-center">
+                <div class="bienvenida">
+                    <div class="titulo-descrip-serv">
+                        <h1>SERVICIOS</h1>
+
+                    </div>
+                </div>
+                <div class="iconos-hotel">
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_tour.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Tour</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_rser.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Restaurantes</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_wifi.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Wi-fi</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_lav.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Lavandería</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_spa.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Spa</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_gym.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Gimnasio</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_pool.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Piscina/Termas</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_cancha.png"
+                                    alt="..."></a>
+                        </div>
+                        <div>
+                            <p>Cancha de tenis</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END -->
+
+    </div>
+    <!-- <img src="../img/servicios/servicio_rser.png" alt="...">
+                    <img src="../img/servicios/servicio_wifi.png" alt="...">
+                    <img src="../img/servicios/servicio_lav.png" alt="...">
+                    <img src="../img/servicios/servicio_spa.png" alt="...">
+                    <img src="../img/servicios/servicio_gym.png" alt="...">
+                    <img src="../img/servicios/servicio_pool.png" alt="...">
+                    <img src="../img/servicios/servicio_cancha.png" alt="..."> -->
+    <!-- END CONTENIDO TOTAL -->
+</div>
+</div>
+
+
+<!--Aqui termina el contenido diferente de cada página-->
+<script src="{% static 'js/habitacion.js'%}"></script>
+{% endblock %}

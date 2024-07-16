@@ -132,7 +132,10 @@ STATICFILES_DIRS = [
     #Aqui hay que dejar todas las app que tengan una carpeta static!
     os.path.join(BASE_DIR, 'clientes'),
     os.path.join(BASE_DIR, 'servicios'),
-    os.path.join(BASE_DIR, 'usuarios')
+    os.path.join(BASE_DIR, 'usuarios'),
+    os.path.join(BASE_DIR, 'eventos'),
+    os.path.join(BASE_DIR, 'hoteles'),
+    os.path.join(BASE_DIR, 'reservas')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
