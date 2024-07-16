@@ -1,0 +1,244 @@
+<!-- templates/cliente_register_login.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
+{% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/resto.css' %}">
+{% endblock %}
+<!-- -------------------------------------------------------------------------- -->
+{% block content %}
+<!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
+
+  <!-- PORTADA -->
+
+  <div class="portada-habitacion">
+    <h1>Restaurantes</h1>
+</div>
+
+<!-- RESTOS-->
+<div class="container-center">
+    <div class="main">
+        
+        <div class="botones">
+            <button class="santiago-rest-btn btn-resto">Santiago</button>
+            <button class="vina-rest-btn btn-resto">Viña del Mar</button>
+        </div>
+        <!-- AQUI VA TODO EL CONTENIDO DE LOS RESTAURANTES EN GENERAL -->
+        <div class="content">
+            <!-- TODO EL CONTENIDO DE LOS RESTAURANTES NORMALES -->
+            <div class="santiago-rest">
+                <section class="nosotros top">
+                    <div class="container-center">
+                        <div class="grid-nosotros">
+                            <div class="col heading grid-nosotros-1">
+                                <div class="titulo-descrip">
+                                    <h1>| SANTIAGO</h1>
+                                    <h2></h2>
+                                </div>
+                                <p>
+                                    Restaurante Seihitsu Hotel Santiago, donde el lujo se encuentra con la autenticidad de la cocina japonesa tradicional. Disfrute de un menú exquisito, diseñado por chefs expertos, que combina ingredientes de la más alta calidad con técnicas ancestrales. En un ambiente sofisticado y elegante, cada bocado le transportará a Japón, ofreciendo una experiencia culinaria incomparable.
+                                </p>
+                                <p>
+                                    Comodidades
+                                </p>
+                                <div class="servicios-box">
+                                    <div class="servicios-box-hijo">
+                                        <div class="box-hijo-1">
+                                            <ul>
+                                                <li><i class="fas fa-arrow-right"></i> Funcionamiento 24 horas</li>
+                                                <li><i class="fas fa-arrow-right"></i> Menu a la carta y buffet</li>
+                                                <li><i class="fas fa-arrow-right"></i> Servicio de reservas</li>
+                                                <li><i class="fas fa-arrow-right"></i> Opciones vegetarianas y veganas</li>
+                                            </ul>
+                                        </div>
+                                        <ul>
+                                            <li><i class="fas fa-arrow-right"></i> Zona de bar y lounge</li>
+                                            <li><i class="fas fa-arrow-right"></i> Musica en vivo algunas noches</li>
+                                            <li><i class="fas fa-arrow-right"></i> Mesas familiares</li>
+                                            <li><i class="fas fa-arrow-right"></i> Area privada para eventos y reuniones</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="btn-reserva">
+                                    <button class="btn-conocer">RESERVAR AHORA</button>
+                                </div>
+                            </div>
+                            <div class="grid-nosotros-2 contenedor-imagen">
+                                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <img src="{% static 'images/resto_3.jpg' %}" class="d-block w-100" alt="...">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="{% static 'images/resto_1.jpg' %}" class="d-block w-100" alt="...">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="{% static 'images/resto_2.jpg' %}"  class="d-block w-100" alt="...">
+                                      </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+            
+
+
+            <!-- END -->
+
+            <!-- TODO EL CONTENIDO DE LOS RESTAURANTES SUPER -->
+            <div class="vina-rest">
+                <section class="nosotros top">
+                    <div class="container-center">
+                        <div class="grid-nosotros">
+                            <div class="col heading grid-nosotros-1">
+                                <div class="titulo-descrip">
+                                    <h1>| VIÑA DEL MAR</h1>
+                                    <h2></h2>
+                                </div>
+                                <p>
+                                    Restaurante Seihitsu Hotel Viña del Mar, un refugio de paz donde la tradición culinaria japonesa cobra vida. Disfrute de un menú exquisito, elaborado por chefs expertos, que utilizan ingredientes frescos y técnicas ancestrales. En un ambiente relajado, con mesas y sillas tradicionales japonesas, cada comida se convierte en una experiencia auténtica y serena.
+                                </p>
+                                <p>
+                                    Comodidades
+                                </p>
+                                <div class="servicios-box">
+                                    <div class="servicios-box-hijo">
+                                        <div class="box-hijo-1">
+                                            <ul>
+                                                <li><i class="fas fa-arrow-right"></i> Servicio tradicional japonés</li>
+                                                <li><i class="fas fa-arrow-right"></i> Menu a la carta y buffet</li>
+                                                <li><i class="fas fa-arrow-right"></i> Servicio de reservas</li>
+                                                <li><i class="fas fa-arrow-right"></i> Opciones vegetarianas y veganas</li>
+                                            </ul>
+                                        </div>
+                                        <ul>
+                                            <li><i class="fas fa-arrow-right"></i> Zona de bar y lounge</li>
+                                            <li><i class="fas fa-arrow-right"></i> Musica en vivo algunas noches</li>
+                                            <li><i class="fas fa-arrow-right"></i> Sectores con separador</li>
+                                            <li><i class="fas fa-arrow-right"></i> Areas privada para eventos y reuniones</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="btn-reserva">
+                                    <button class="btn-conocer">RESERVAR AHORA</button>
+                                </div>
+                            </div>
+                            <div class="grid-nosotros-2 contenedor-imagen">
+                                <div id="carouselExampleAutoplaying2" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                      <div class="carousel-item active">
+                                        <img src="{% static 'images/resto_4.jpg' %}"  class="d-block w-100" alt="...">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="{% static 'images/resto_5.jpg' %}" class="d-block w-100" alt="...">
+                                      </div>
+                                      <div class="carousel-item">
+                                        <img src="{% static 'images/resto_6.jpg' %}"  class="d-block w-100" alt="...">
+                                      </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying2" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying2" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        
+    
+    <div class="comida-titulo">
+        <h1>DISFRUTAR</h1>
+        <h2>Un espacio para</h2>
+    </div>
+    <div class="contenedor-opciones">
+        <div class="opciones-resto">
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_1.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_13.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_2.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_3.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+        </div>
+        <div class="opciones-resto">
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_4.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_5.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_6.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_7.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+        </div>
+        <div class="opciones-resto">
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_8.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_9.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_10.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+            <div class="card" style="width: 38rem;">
+                <img src="{% static 'images/comida_11.jpg' %}" class="card-img-top" alt="...">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END CONTENIDO TOTAL -->
+
+
+
+
+
+
+<!--Aqui termina el contenido diferente de cada página-->
+<script src="{% static 'js/resto.js'%}"></script>
+{% endblock %}
