@@ -14,6 +14,10 @@ def habitaciones_vina(request):
     context={}
     return render(request, 'hoteles/habitaciones_vina.html', {'hoteles': habitaciones_vina})
 
+def restaurantes(request):
+    context={}
+    return render(request, 'hoteles/restaurantes.html', {'hoteles': restaurantes})
+
 
 # def "nombre de la plantilla"(request):
 #     context={}

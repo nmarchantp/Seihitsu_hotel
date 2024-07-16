@@ -73,7 +73,7 @@
             <nav class="navbar opciones-menu">
                 <a href="../html/nosotros.html">Nosotros</a>
                 <a href="{% url 'habitaciones' %}">Habitaciones</a>
-                <a href="../html/restaurantes.html">Restaurantes</a>
+                <a href="{% url 'restaurantes' %}">Restaurantes</a>
                 <a href="{% url 'eventos' %}">Eventos</a>
                 <a href="{% url 'servicio' %}">Servicios</a>
                 <a href="../html/entorno.html">Entorno</a>
@@ -123,8 +123,8 @@
             <div class="box">
                 <h3>HOTEL</h3>
                 <a href="#"> <i class="fas fa-arrow-right"></i> Reserva</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Habitaciones</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Restaurantes</a>
+                <a href="{% url 'habitaciones' %}"> <i class="fas fa-arrow-right"></i> Habitaciones</a>
+                <a href="{% url 'restaurantes' %}"> <i class="fas fa-arrow-right"></i> Restaurantes</a>
                 <a href="{% url 'eventos' %}"> <i class="fas fa-arrow-right"></i> Salones y Eventos</a>
                 <a href="{% url 'servicio' %}"> <i class="fas fa-arrow-right"></i> Servicios</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i> Contacto</a>

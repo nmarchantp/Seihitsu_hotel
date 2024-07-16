@@ -1,7 +1,26 @@
+<!-- templates/cliente_register_login.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
 {% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
 
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/resto.css' %}">
+{% endblock %}
+<!-- -------------------------------------------------------------------------- -->
 {% block content %}
+<!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
+  <!-- PORTADA -->
 
+  <div class="portada-habitacion">
+    <h1>Reserva</h1>
+</div>
+
+<!-- BUSQUEDA -->
   <h2>Buscar Habitaciones Disponibles</h2>
   <form method="post">
     {% csrf_token %}
@@ -46,4 +65,9 @@
   {% else %}
     <p>No hay habitaciones disponibles para las fechas seleccionadas en {{ form.cleaned_data.nombre_hotel }}</p>
   {% endif %}
+
+<!--Aqui termina el contenido diferente de cada página-->
+<!-- JS -->
+<script src=""></script>
+
 {% endblock %}
