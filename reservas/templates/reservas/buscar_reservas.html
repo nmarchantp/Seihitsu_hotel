@@ -1,7 +1,20 @@
+<!-- templates/index.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
 {% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
 
 {% block content %}
-
+<!--Aqui se debe colocar el contenido diferente de cada página-->
 <div class="portada-habitacion">
     <h1>Reserva</h1>
 </div>
@@ -14,21 +27,24 @@
 </form>
 
 {% if habitaciones_disponibles %}
-    <h3>Habitaciones Disponibles</h3>
-    <ul>
-        {% for habitacion in habitaciones_disponibles %}
-        <li>
-            <span>Habitación {{ habitacion.id_tipo_habitacion.nombre }}: {{ habitacion.precio_por_noche }}</span>
-            <form method="post" action="{% url 'resumen_reserva' habitacion_id=habitacion.id_habitacion %}">
-                {% csrf_token %}
-                <input type="hidden" name="fecha_inicio" value="{{ fecha_inicio }}">
-                <input type="hidden" name="fecha_fin" value="{{ fecha_fin }}">
-                <button type="submit">Reservar</button>
-            </form>
-        </li>
-        {% endfor %}
-    </ul>
+<h3>Habitaciones Disponibles</h3>
+<ul>
+    {% for habitacion in habitaciones_disponibles %}
+    <li>
+        <span>Habitación {{ habitacion.id_tipo_habitacion.nombre }}: {{ habitacion.precio_por_noche }}</span>
+        <form method="post" action="{% url 'resumen_reserva' habitacion.id_habitacion %}">
+          {% csrf_token %}
+          <input type="hidden" name="fecha_inicio" value="{{ fecha_inicio }}">
+          <input type="hidden" name="fecha_fin" value="{{ fecha_fin }}">
+          <input type="hidden" name="noches" value="{{ noches }}">
+          <input type="hidden" name="adultos" value="{{ adultos }}">
+          <input type="hidden" name="niños" value="{{ niños }}">
+          <button type="submit">Reservar</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
 {% else %}
-    <p>No hay habitaciones disponibles para las fechas seleccionadas en {{ nombre_hotel }}</p>
+<p>No hay habitaciones disponibles para las fechas seleccionadas en {{ nombre_hotel }}</p>
 {% endif %}
 {% endblock %}

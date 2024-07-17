@@ -23,6 +23,9 @@ class BuscarReservaForm(forms.Form):
     nombre_hotel = forms.ModelChoiceField(queryset=Hotel.objects.all(), required=True)
     fecha_inicio = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=True)
     fecha_fin = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}), required=True)
+    noches = forms.IntegerField(min_value=1, required=True, label='Cantidad de Noches')
+    adultos = forms.IntegerField(min_value=1, required=True, label='Cantidad de Adultos')
+    niños = forms.IntegerField(min_value=0, required=False, label='Cantidad de Niños')
 
     
 

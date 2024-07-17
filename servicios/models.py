@@ -7,7 +7,7 @@ class TipoServicio(models.Model):
     descripcion = models.TextField(blank=True)
 
     def __str__(self):
-        return self.nombre_categoria
+        return self.nombre
     class Meta:
         verbose_name = 'Tipo de Servicio'
         verbose_name_plural = 'Tipos de de Servicios'
@@ -23,7 +23,7 @@ class Servicio(models.Model):
     id_categoria = models.ForeignKey(TipoServicio, on_delete=models.CASCADE, related_name='servicios')
 
     def __str__(self):
-        return self.nombre_servicio
+        return self.nombre
     class Meta:
         verbose_name = 'Servicio'
         verbose_name_plural = 'Servicios'
