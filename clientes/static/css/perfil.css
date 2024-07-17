@@ -31,7 +31,7 @@
      background-color: #1e1e1e;
      border-radius: 10px;
      box-shadow: 14px 14px 20px 0 rgba(20, 20, 20, 0.3);
-     padding: 30px 0 0 0;
+     padding: 30px 50px;
      
 }
 
@@ -57,7 +57,7 @@
     font-size: 18px;
     margin-top: 50px;
     display: flex;
-    padding: 10px 50px;
+    padding: 10px 20px;
     border-radius: 5px;
     background-color: #e3bb41;
     color: white;
@@ -133,17 +133,30 @@
 }
 
 
-.grid-club-members-2 {
-    display: flex;
-    justify-content: right;
-    align-items: right;
+/* caja login */
+
+
+/* CSS PERFIL */
+
+.form-group {
+    margin-bottom: 15px;
 }
 
-.grid-club-members-2 img{
-    width: 80%;
-    margin-top: 30px;
+.errorlist {
+    color: red;
+    list-style-type: none;
 }
-/* caja login */
+
+.btn-formu {
+    text-align: center;
+}
+
+.btn-registrar {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+
 
 
 
