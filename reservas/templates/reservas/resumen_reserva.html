@@ -1,6 +1,24 @@
+<!-- templates/index.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
 {% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
 
 {% block content %}
+<!--Aqui se debe colocar el contenido diferente de cada página-->
+<div class="portada-habitacion">
+    <h1>Resumen de Reserva</h1>
+</div>
+
 
 <h1>Resumen de Reserva</h1>
 <p>Tipo de habitación: {{ habitacion.id_tipo_habitacion.nombre }}</p>
@@ -17,4 +35,6 @@
     <input type="hidden" name="fecha_fin" value="{{ fecha_fin }}">
     <button type="submit">Confirmar Reserva</button>
 </form>
+
+<!--Aqui termina el contenido diferente de cada página-->
 {% endblock %}
