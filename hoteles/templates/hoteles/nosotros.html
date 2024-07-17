@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
+{% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<!--Aqui se debe colocar el contenido diferente de cada página-->
+
+
+
+<!--Aqui termina el contenido diferente de cada página-->
+{% endblock %}
