@@ -42,25 +42,20 @@
                 </div>
                 <div class="d-flex usuario">
                     {% if user.is_authenticated %}
-                    <i class="fa-solid fa-user"></i>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          {{ user.username }}
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'perfil'%}">Perfil</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="{% url 'logout_sesion' %}">Cerrar Sesión</a></li>
+                    <li class="nav-item dropdown usuario">
+                        <a class="nav-link dropdown-toggle nom-user" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{ user.username }}</a>
+                        <i class="fa-solid fa-user"></i>
+                        <ul class="dropdown-menu menu-login">
+                          <li><a class="dropdown-item opciones-login" href="{% url 'perfil' %}">Perfil</a></li>
+                          <li><a class="dropdown-item opciones-login" href="{% url 'logout_sesion' %}">Cerrar Sesión</a></li>
                         </ul>
-                      </li>
-                  </ul>
-                  {% else %}
-                  <a class="nav-link logo2" href="{% url 'login' %}" role="button"
-                        aria-expanded="false">Iniciar Sesión</a>
-                        <p>/</p>
-                    <a class="nav-link logo2" href="{% url 'registro' %}" role="button"
-                        aria-expanded="false">Registrarse</a>
-                  {% endif %}
+                    </li>
+                    {% else %}
+                    <a class="nav-link logo2" href="{% url 'login' %}" role="button" aria-expanded="false">Iniciar Sesión</a>
+                    <p>/</p>
+                    <a class="nav-link logo2" href="{% url 'registro' %}" role="button" aria-expanded="false">Registrarse</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -72,13 +67,13 @@
 
             <nav class="navbar opciones-menu">
                 <a href="../html/nosotros.html">Nosotros</a>
-                <a href="">Habitaciones</a>
-                <a href="../html/restaurantes.html">Restaurantes</a>
-                <a href="../html/eventos.html">Eventos</a>
+                <a href="{% url 'habitaciones' %}">Habitaciones</a>
+                <a href="{% url 'restaurantes' %}">Restaurantes</a>
+                <a href="{% url 'eventos' %}">Eventos</a>
                 <a href="{% url 'servicio' %}">Servicios</a>
                 <a href="../html/entorno.html">Entorno</a>
                 <a href="../html/galeria.html">Galería</a>
-                <a href="../html/reserva.html" class="btn"> Reservar</a>
+                <a href="{% url 'buscar_reservas' %}" class="btn"> Reservar</a>
             </nav>
 
 
@@ -123,10 +118,10 @@
             <div class="box">
                 <h3>HOTEL</h3>
                 <a href="#"> <i class="fas fa-arrow-right"></i> Reserva</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Habitaciones</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Restaurantes</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Salones y Eventos</a>
-                <a href="#"> <i class="fas fa-arrow-right"></i> Servicios</a>
+                <a href="{% url 'habitaciones' %}"> <i class="fas fa-arrow-right"></i> Habitaciones</a>
+                <a href="{% url 'restaurantes' %}"> <i class="fas fa-arrow-right"></i> Restaurantes</a>
+                <a href="{% url 'eventos' %}"> <i class="fas fa-arrow-right"></i> Salones y Eventos</a>
+                <a href="{% url 'servicio' %}"> <i class="fas fa-arrow-right"></i> Servicios</a>
                 <a href="#"> <i class="fas fa-arrow-right"></i> Contacto</a>
             </div>
 

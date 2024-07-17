@@ -5,7 +5,7 @@
 
 <!--agregar siempre esta linea en todas las plantillas x.x -->
 
-{% load static %}  
+{% load static %}
 
 <!-- -------------------------------------------------------------------------- -->
 {% block extra_head %}
@@ -15,13 +15,198 @@
 {% block content %}
 <!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
 <div class="portada-habitacion">
-    <h1>Agregar Perfil</h1>
+    <h1>Perfil</h1>
 </div>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Guardar</button>
-</form>
 
- <!--Aqui termina el contenido diferente de cada página-->
-    {% endblock %}
+<div class="container-center">
+    <form method="post" class="perfil">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="{{ form.id_tipo_cliente.id_for_label }}">Tipo de Cliente</label>
+            {{ form.id_tipo_cliente }}
+            {% if form.id_tipo_cliente.errors %}
+            <ul class="errorlist">
+                {% for error in form.id_tipo_cliente.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.nombre.id_for_label }}">Nombre</label>
+            {{ form.nombre }}
+            {% if form.nombre.errors %}
+            <ul class="errorlist">
+                {% for error in form.nombre.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.segundo_nombre.id_for_label }}">Segundo Nombre</label>
+            {{ form.segundo_nombre }}
+            {% if form.segundo_nombre.errors %}
+            <ul class="errorlist">
+                {% for error in form.segundo_nombre.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.apellido.id_for_label }}">Apellido</label>
+            {{ form.apellido }}
+            {% if form.apellido.errors %}
+            <ul class="errorlist">
+                {% for error in form.apellido.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.segundo_apellido.id_for_label }}">Segundo Apellido</label>
+            {{ form.segundo_apellido }}
+            {% if form.segundo_apellido.errors %}
+            <ul class="errorlist">
+                {% for error in form.segundo_apellido.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.numero_identificacion.id_for_label }}">Número de Identificación</label>
+            {{ form.numero_identificacion }}
+            {% if form.numero_identificacion.errors %}
+            <ul class="errorlist">
+                {% for error in form.numero_identificacion.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.nombre_empresa.id_for_label }}">Nombre de la Empresa</label>
+            {{ form.nombre_empresa }}
+            {% if form.nombre_empresa.errors %}
+            <ul class="errorlist">
+                {% for error in form.nombre_empresa.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.rut.id_for_label }}">RUT</label>
+            {{ form.rut }}
+            {% if form.rut.errors %}
+            <ul class="errorlist">
+                {% for error in form.rut.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.email.id_for_label }}">Correo Electrónico</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+            <ul class="errorlist">
+                {% for error in form.email.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.telefono.id_for_label }}">Teléfono</label>
+            {{ form.telefono }}
+            {% if form.telefono.errors %}
+            <ul class="errorlist">
+                {% for error in form.telefono.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.direccion.id_for_label }}">Dirección</label>
+            {{ form.direccion }}
+            {% if form.direccion.errors %}
+            <ul class="errorlist">
+                {% for error in form.direccion.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.comuna.id_for_label }}">Comuna</label>
+            {{ form.comuna }}
+            {% if form.comuna.errors %}
+            <ul class="errorlist">
+                {% for error in form.comuna.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.region.id_for_label }}">Región</label>
+            {{ form.region }}
+            {% if form.region.errors %}
+            <ul class="errorlist">
+                {% for error in form.region.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="form-group">
+            <label for="{{ form.pais.id_for_label }}">País</label>
+            {{ form.pais }}
+            {% if form.pais.errors %}
+            <ul class="errorlist">
+                {% for error in form.pais.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <!-- Mover errores generales del formulario aquí si es que hubiesen -->
+        {% if form.non_field_errors %}
+        <div class="errorlist">
+            <ul>
+                {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="btn-formu">
+            <button type="submit" class="btn-registrar">Guardar</button>
+        </div>
+    </form>
+
+</div>
+
+<!--Aqui termina el contenido diferente de cada página-->
+{% endblock %}

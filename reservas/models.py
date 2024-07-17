@@ -61,8 +61,9 @@ class ReservaServicioIndependiente(models.Model):
     ]
     
     id_reserva_servicio = models.AutoField(primary_key=True)
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='reservas_servicio')
-    servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, related_name='reservas')
+    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='reservas_servicio')
+    id_servicio = models.ForeignKey(Servicio, on_delete=models.CASCADE, related_name='reservas')
+    valor = models.DecimalField(max_digits=10, decimal_places=2)
     fecha_reserva = models.DateTimeField(auto_now_add=True)
     fecha_servicio = models.DateTimeField()
     estado = models.CharField(max_length=10, choices=ESTADO_RESERVA_OPCIONES, default=PENDIENTE)
@@ -91,6 +92,12 @@ class Comentario(models.Model):
 # dejar aca la reserva del evento
 class ReservaEvento(models.Model):
     id_reserva_evento = models.AutoField(primary_key=True)
+    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE, related_name='Reservas_evento')
+    tipo_evento = models.TextField(blank=False)
+    valor = models.DecimalField(max_digits=10, decimal_places=2)
+    codigo_descuento = models.TextField()
+    total = models.DecimalField(max_digits=10, decimal_places=2)
+    total_descuento = models.DecimalField(max_digits=10, decimal_places=2)
     fecha_inicio = models.DateTimeField()
     fecha_fin = models.DateTimeField()
     def __str__(self):

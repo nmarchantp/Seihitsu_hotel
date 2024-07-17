@@ -2,4 +2,5 @@
 from django.shortcuts import render
 
 def eventos(request):
-    return render(request, 'eventos.html')
+    context={}
+    return render(request, 'eventos/eventos.html', {'eventos': eventos})

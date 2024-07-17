@@ -1,0 +1,526 @@
+<!-- templates/cliente_register_login.html -->
+<!-- esto siempre debe ir primero en todas las plantillas que no sean la base -->
+{% extends 'base.html' %}
+<!-- -------------------------------------------------------------------------- -->
+
+<!--agregar siempre esta linea en todas las plantillas x.x -->
+
+{% load static %}
+
+<!-- -------------------------------------------------------------------------- -->
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/evento.css' %}">
+{% endblock %}
+<!-- -------------------------------------------------------------------------- -->
+{% block content %}
+<!--------------------------------------------Aqui se debe colocar el contenido diferente de cada página-------------------------------->
+<div class="portada-habitacion">
+    <h1>Salones y Eventos</h1>
+</div>
+
+<!-- SALONES-->
+<div class="container-center">
+    <div class="main">
+        <div class="botones">
+            <button class="normal-btn btn-room">
+                <div class="box-contenido">
+                    <img src="{% static 'images/prese_1.jpg' %}" alt="">
+                    <div class="box-info">
+                        <h3 class="box-titulo">Presentaciones</h3>
+                    </div>
+                </div>
+            </button>
+            <button class="super-btn btn-room">
+                <div class="box-contenido">
+                    <img src="{% static 'images/reuniones_1.jpg' %}" alt="">
+                    <div class="box-info">
+                        <h3 class="box-titulo">Reuniones</h3>
+                    </div>
+                </div>
+            </button>
+            <button class="premium-btn btn-room">
+                <div class="box-contenido">
+                    <img src="{% static 'images/cele_1.jpg' %}" alt="">
+                    <div class="box-info">
+                        <h3 class="box-titulo">Celebraciones</h3>
+                    </div>
+                </div>
+            </button>
+        </div>
+        <!-- AQUI VA TODO EL CONTENIDO DE LAS HABITACIONES EN GENERAL -->
+        <div class="content">
+            <!-- TODO EL CONTENIDO DE LAS HABITACIONES NORMALES -->
+            <div class="normal">
+                <div class="descrip-evento bienvenida">
+                    <div class="titulo-descrip">
+                        <h1>| PRESENTACIONES </h1>
+                    </div>
+                    <p>
+                        Hotel Isla Seca cuenta con un servicio personalizado y una experiencia profesional que
+                        garantizarán el éxito de sus eventos, tanto sociales como corporativos. Además, ofrece
+                        servicio de banquetería con diversas alternativas de coffee break, desayunos, almuerzos,
+                        cenas, cocteles y otras opciones gastronómicas según las necesidades de cada evento.
+
+                        El hotel tiene 2 cómodos salones con hermosas vistas a la bahía de Zapallar y con toda la
+                        tecnología necesaria para eventos sociales y corporativos, tales como proyector multimedia,
+                        telón, pizarra, papelógrafo y conexión a Internet vía Wi Fi.
+
+                        El Salón Isla Seca tiene una capacidad para 30 personas mientras que el Salón Mar Bravo
+                        puede acoger hasta 60 personas.
+                    </p>
+                </div>
+                <section class="nosotros top">
+                    <div class="container-center bienvenida">
+                        <div class="grid-nosotros">
+                            <div class="col grid-nosotros-1">
+                                <div class="titulo-form">
+                                    <h1>RESERVAS</h1>
+                                    <div class="form-evento">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                completo</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="Nombre Apellidos">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Correo
+                                                electrónico</label>
+                                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="ejemplo@gmail.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                empresa</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="Razón Social">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1"
+                                                class="form-label">Teléfono</label>
+                                            <input type="tel" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Cantidad
+                                                Habitaciones</label>
+                                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Cantidad
+                                                Personas</label>
+                                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Fecha
+                                                entrada</label>
+                                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Fecha
+                                                salida</label>
+                                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-evento-2">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlTextarea1"
+                                                class="form-label">Mensaje</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                rows="3"></textarea>
+                                        </div>
+                                        <div class="btn-formulario">
+                                            <button type="submit" class="btn btn-evento">Reservar</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="grid-nosotros-2 contenedor-imagen">
+                                <div class="titulo-descrip">
+                                    <h1>Salones </h1>
+                                </div>
+                                    <div class="contenedor-opciones">
+                                        <div class="opciones-resto">
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/prese_1.jpg' %}"class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/prese_2.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/prese_3.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/eventos.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+
+
+            <!-- END -->
+
+            <!-- TODO EL CONTENIDO DE LAS HABITACIONES SUPER -->
+            <div class="super">
+                <div class="descrip-evento bienvenida">
+                    <div class="titulo-descrip">
+                        <h1>| REUNIONES </h1>
+                    </div>
+                    <p>
+                        Hotel Isla Seca cuenta con un servicio personalizado y una experiencia profesional que
+                        garantizarán el éxito de sus eventos, tanto sociales como corporativos. Además, ofrece
+                        servicio de banquetería con diversas alternativas de coffee break, desayunos, almuerzos,
+                        cenas, cocteles y otras opciones gastronómicas según las necesidades de cada evento.
+
+                        El hotel tiene 2 cómodos salones con hermosas vistas a la bahía de Zapallar y con toda la
+                        tecnología necesaria para eventos sociales y corporativos, tales como proyector multimedia,
+                        telón, pizarra, papelógrafo y conexión a Internet vía Wi Fi.
+
+                        El Salón Isla Seca tiene una capacidad para 30 personas mientras que el Salón Mar Bravo
+                        puede acoger hasta 60 personas.
+                    </p>
+                </div>
+                <section class="nosotros top">
+                    <div class="container-center bienvenida">
+                        <div class="grid-nosotros">
+                            <div class="col grid-nosotros-1">
+                                <div class="titulo-form">
+                                    <h1>RESERVAS</h1>
+                                    <div class="form-evento">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                completo</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="Nombre Apellidos">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Correo
+                                                electrónico</label>
+                                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="ejemplo@gmail.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                empresa</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="Razón Social">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1"
+                                                class="form-label">Teléfono</label>
+                                            <input type="tel" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Cantidad
+                                                Habitaciones</label>
+                                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Cantidad
+                                                Personas</label>
+                                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Fecha
+                                                entrada</label>
+                                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Fecha
+                                                salida</label>
+                                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-evento-2">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlTextarea1"
+                                                class="form-label">Mensaje</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                rows="3"></textarea>
+                                        </div>
+                                        <div class="btn-formulario">
+                                            <button type="submit" class="btn btn-evento">Reservar</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="grid-nosotros-2 contenedor-imagen">
+                                <div class="titulo-descrip">
+                                    <h1>Salones </h1>
+                                </div>
+                                    <div class="contenedor-opciones">
+                                        <div class="opciones-resto">
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/reuniones_1.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/reuniones_2.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/reuniones_3.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/reuniones_4.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- END -->
+
+            <!-- TODO EL CONTENIDO DE LAS HABITACIONES PREMIUM -->
+            <div class="premium">
+                <div class="descrip-evento bienvenida">
+                    <div class="titulo-descrip">
+                        <h1>| CELEBRACIONES </h1>
+                    </div>
+                    <p>
+                        Hotel Isla Seca cuenta con un servicio personalizado y una experiencia profesional que
+                        garantizarán el éxito de sus eventos, tanto sociales como corporativos. Además, ofrece
+                        servicio de banquetería con diversas alternativas de coffee break, desayunos, almuerzos,
+                        cenas, cocteles y otras opciones gastronómicas según las necesidades de cada evento.
+
+                        El hotel tiene 2 cómodos salones con hermosas vistas a la bahía de Zapallar y con toda la
+                        tecnología necesaria para eventos sociales y corporativos, tales como proyector multimedia,
+                        telón, pizarra, papelógrafo y conexión a Internet vía Wi Fi.
+
+                        El Salón Isla Seca tiene una capacidad para 30 personas mientras que el Salón Mar Bravo
+                        puede acoger hasta 60 personas.
+                    </p>
+                </div>
+                <section class="nosotros top">
+                    <div class="container-center bienvenida">
+                        <div class="grid-nosotros">
+                            <div class="col grid-nosotros-1">
+                                <div class="titulo-form">
+                                    <h1>RESERVAS</h1>
+                                    <div class="form-evento">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                completo</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="Nombre Apellidos">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Correo
+                                                electrónico</label>
+                                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="ejemplo@gmail.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nombre
+                                                empresa</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="Razón Social">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1"
+                                                class="form-label">Teléfono</label>
+                                            <input type="tel" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Cantidad
+                                                Habitaciones</label>
+                                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Cantidad
+                                                Personas</label>
+                                            <input type="number" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Fecha
+                                                entrada</label>
+                                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Fecha
+                                                salida</label>
+                                            <input type="date" class="form-control" id="exampleFormControlInput1"
+                                                placeholder="">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-evento-2">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlTextarea1"
+                                                class="form-label">Mensaje</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                                                rows="3"></textarea>
+                                        </div>
+                                        <div class="btn-formulario">
+                                            <button type="submit" class="btn btn-evento">Reservar</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="grid-nosotros-2 contenedor-imagen">
+                                <div class="titulo-descrip">
+                                    <h1>Salones </h1>
+                                </div>
+                                    <div class="contenedor-opciones">
+                                        <div class="opciones-resto">
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/cele_1.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/cele_2.jpg' %}"class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/cele_3.jpg' %}"class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                            <div class="card" style="width: 38rem;">
+                                                <img src="{% static 'images/cele_4.jpg' %}" class="card-img-top"
+                                                    alt="...">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--NUESTROS SERVICIOS RESUMEN-->
+
+                <div class="bg-categ-serv top container-center">
+                    <div class="bienvenida">
+                        <div class="titulo-descrip-serv">
+                            <h1>SERVICIOS</h1>
+
+                        </div>
+                    </div>
+                    <div class="iconos-hotel">
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_tour.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Tour</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_rser.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Restaurantes</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_wifi.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Wi-fi</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_lav.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Lavandería</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_spa.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Spa</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_gym.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Gimnasio</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_pool.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Piscina/Termas</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="{% url 'servicio' %}"><img src="../img/servicios/servicio_cancha.png"
+                                        alt="..."></a>
+                            </div>
+                            <div>
+                                <p>Cancha de tenis</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- END -->
+            
+
+
+<!--------------------------------------------Aqui termina el contenido diferente de cada página---------------------------------------->
+<script src="{% static 'js/evento.js'%}"></script>
+{% endblock %}
