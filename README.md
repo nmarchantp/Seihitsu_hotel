@@ -18,7 +18,7 @@ pip install -r requirements.txt
    La base de datos incluye las tablas de Django por defecto cargadas.
   - Ejecutar migraciones:
 ```
-python manage.py makemigrations web utilidades hoteles eventos servicios usuarios clientes reservas reportes
+python manage.py makemigrations user web utilidades hoteles eventos servicios usuarios clientes reservas reportes
 python manage.py migrate
 ```
 6. **Cargar Datos Iniciales:**

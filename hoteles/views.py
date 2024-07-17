@@ -18,6 +18,18 @@ def restaurantes(request):
     context={}
     return render(request, 'hoteles/restaurantes.html', {'hoteles': restaurantes})
 
+def nosotros(request):
+    context={}
+    return render(request, 'hoteles/nosotros.html', {'hoteles': restaurantes})
+
+def entorno(request):
+    context={}
+    return render(request, 'hoteles/entorno.html', {'hoteles': restaurantes})
+
+def galeria(request):
+    context={}
+    return render(request, 'hoteles/galeria.html', {'hoteles': restaurantes})
+
 
 # def "nombre de la plantilla"(request):
 #     context={}
