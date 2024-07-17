@@ -96,6 +96,13 @@
     font-size: 17px;
     color: white;
 }
+
+.perfil{
+    display: block;
+    margin: 10px 0;
+    font-size: 17px;
+    color: #1e1e1e;
+}
 .form-group input {
     width: 100%;
     padding: 8px;
