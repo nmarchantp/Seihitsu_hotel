@@ -28,24 +28,50 @@
                 <h1>Iniciar sesión</h1>
                 <form method="post" class="formulario-reg">
                     {% csrf_token %}
-
+                
                     <div class="datos">
                         <label for="{{ form.username.id_for_label }}" class="label">Nombre de usuario</label>
                         <input type="text" class="form-control" name="{{form.username.html_name}}"
-                        placeholder="Escribe tu nombre de usuario"{{ form.username }}>
+                        placeholder="Escribe tu nombre de usuario">
+                        {% if form.username.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.username.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
-
-
+                
                     <div class="datos">
                         <label for="{{ form.password.id_for_label }}" class="label">Contraseña</label>
                         <input type="password" class="form-control" name="{{form.password.html_name}}"
-                            placeholder="Escribe tu contraseña"{{ form.password }}>
+                            placeholder="Escribe tu contraseña">
+                        {% if form.password.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.password.errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                     </div>
-
+                
+                    <!-- tiramos el error de verificacion al final del formulario -->
+                    {% if form.non_field_errors %}
+                    <div class="errorlist">
+                        <ul>
+                            {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                
                     <div class="btn-formu">
                         <button type="submit" class="btn-registrar">Iniciar Sesión</button>
                     </div>
                 </form>
+                
+                
                 <div class="pregunta-form">
                     <p>¿Aún no te has registrado? <a href="{% url 'registro' %}"> Registrate</a></p>
                 </div>
