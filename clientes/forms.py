@@ -6,8 +6,7 @@ class RegistroPerfilForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = [
-            'id_tipo_cliente','nombre', 'segundo_nombre','apellido', 'segundo_apellido', 'numero_identificacion','nombre_empresa', 'rut',  'email', 'telefono', 'direccion',
-            'comuna', 'region', 'pais'
+            'id_tipo_cliente', 'nombre', 'segundo_nombre', 'apellido', 'segundo_apellido', 'numero_identificacion', 'nombre_empresa', 'rut', 'email', 'telefono', 'direccion', 'comuna', 'region', 'pais'
         ]
         widgets = {            
             'id_tipo_cliente': forms.Select(attrs={'class': 'form-control', 'id': 'tipo_cliente'}),
@@ -24,15 +23,13 @@ class RegistroPerfilForm(forms.ModelForm):
             'comuna': forms.Select(attrs={'class': 'form-control'}),
             'region': forms.Select(attrs={'class': 'form-control'}),
             'pais': forms.Select(attrs={'class': 'form-control'})
-           
         }
 
 class PerfilForm(forms.ModelForm):
     class Meta:
         model = Cliente
         fields = [
-            'id_tipo_cliente','nombre', 'segundo_nombre','apellido', 'segundo_apellido', 'numero_identificacion','nombre_empresa', 'rut',  'email', 'telefono', 'direccion',
-            'comuna', 'region', 'pais'
+            'id_tipo_cliente', 'nombre', 'segundo_nombre', 'apellido', 'segundo_apellido', 'numero_identificacion', 'nombre_empresa', 'rut', 'email', 'telefono', 'direccion', 'comuna', 'region', 'pais'
         ]
         widgets = {
             'id_tipo_cliente': forms.Select(attrs={'class': 'form-control', 'id': 'tipo_cliente', 'disabled': 'disabled'}),
@@ -50,9 +47,7 @@ class PerfilForm(forms.ModelForm):
             'comuna': forms.Select(attrs={'class': 'form-control'}),
             'region': forms.Select(attrs={'class': 'form-control'}),
             'pais': forms.Select(attrs={'class': 'form-control'})
-            
         }
-
 
 class TarjetaCreditoForm(forms.ModelForm):
     class Meta:

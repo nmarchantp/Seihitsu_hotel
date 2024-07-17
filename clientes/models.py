@@ -26,7 +26,7 @@ class Cliente(models.Model):
     numero_identificacion = models.CharField(max_length=10)
     nombre = models.CharField(max_length=100)
     segundo_nombre = models.CharField(max_length=50, blank=True)
-    apellido = models.CharField(max_length=100, blank=True, null=True)
+    apellido = models.CharField(max_length=100, null=True)
     segundo_apellido = models.CharField(max_length=50, blank=True, null=True)
     email = models.EmailField(unique=True)
     telefono = models.CharField(max_length=9)
