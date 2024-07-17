@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Resumen de Reserva</h1>
+<p>Tipo de habitación: {{ habitacion.id_tipo_habitacion.nombre }}</p>
+<p>Número de habitación: {{ habitacion.numero_habitacion }}</p>
+<p>Piso: {{ habitacion.piso }}</p>
+<p>Precio por noche: {{ habitacion.precio_por_noche }}</p>
+<p>Check-in: {{ fecha_inicio }}</p>
+<p>Check-out: {{ fecha_fin }}</p>
+<p>Número de reserva: {{ reserva.referencia }}</p>  <!-- Mostrar el número de reserva generado -->
+
+<form method="post" action="{% url 'confirmar_reserva' habitacion_id=habitacion.id_habitacion %}">
+    {% csrf_token %}
+    <input type="hidden" name="fecha_inicio" value="{{ fecha_inicio }}">
+    <input type="hidden" name="fecha_fin" value="{{ fecha_fin }}">
+    <button type="submit">Confirmar Reserva</button>
+</form>
+{% endblock %}
