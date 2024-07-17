@@ -155,7 +155,6 @@ section{
     margin: 0;
     color: white;
     font-size: 13px;
-    padding: 10px 0px 0px 0px  ;
 }
 
 .header-contact i { 
@@ -171,32 +170,55 @@ section{
 
 /*--------------------BARRA INICIAL-INICIAR SESION Y REGISTRO----------------------*/
 
-.usuario i{
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    
-}
-
-.usuario i:hover{
-    
-    font-size: 20px;
+.usuario {
     display: flex;
     align-items: center;
 }
 
-.usuario a{
+.usuario a {
     font-size: 17px;
-    display: flex;
-    align-items: center;
     color: white;
-    margin-top: 8px;
     padding: 0 5px;
 }
 
-.usuario a:hover{
+.usuario i {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.usuario a:hover {
     color: #e3bb41;
-    text-decoration-line: underline ;
+    text-decoration-line: underline;
+}
+
+.nom-user{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.nom-user:hover{
+    color: #e3bb41 !important;
+    text-decoration: none !important;
+}
+
+.opciones-login {
+    color: white !important ;
+    text-decoration: none !important;
+    padding: 10px !important;
+}
+
+.opciones-login:hover {
+    color:#e3bb41 !important ;
+    text-decoration: none !important;
+    background-color: #1E1E1E !important;
+    padding: 10px !important;
+}
+
+.menu-login{
+    background-color:#1E1E1E !important;
+    border-color: #1E1E1E !important;
+    padding: 10px !important;
+    border-radius: 0 !important;
 }
 
 /*------------------------- MENU------------------------ */

@@ -42,25 +42,24 @@
                 </div>
                 <div class="d-flex usuario">
                     {% if user.is_authenticated %}
-                    <i class="fa-solid fa-user"></i>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          {{ user.username }}
-                        </a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="{% url 'perfil'%}">Perfil</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="{% url 'logout_sesion' %}">Cerrar Sesión</a></li>
+                    <li class="nav-item dropdown usuario">
+                        <a class="nav-link dropdown-toggle nom-user" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            {{ user.username }}</a>
+                        <i class="fa-solid fa-user"></i>
+                        <ul class="dropdown-menu menu-login">
+                            <li><a class="dropdown-item opciones-login" href="{% url 'perfil' %}">Perfil</a></li>
+                            <li><a class="dropdown-item opciones-login" href="{% url 'logout_sesion' %}">Cerrar
+                                    Sesión</a></li>
                         </ul>
-                      </li>
-                  </ul>
-                  {% else %}
-                  <a class="nav-link logo2" href="{% url 'login' %}" role="button"
-                        aria-expanded="false">Iniciar Sesión</a>
-                        <p>/</p>
+                    </li>
+                    {% else %}
+                    <a class="nav-link logo2" href="{% url 'login' %}" role="button" aria-expanded="false">Iniciar
+                        Sesión</a>
+                    <p>/</p>
                     <a class="nav-link logo2" href="{% url 'registro' %}" role="button"
                         aria-expanded="false">Registrarse</a>
-                  {% endif %}
+                    {% endif %}
                 </div>
             </div>
         </div>
@@ -71,13 +70,13 @@
             </div>
 
             <nav class="navbar opciones-menu">
-                <a href="../html/nosotros.html">Nosotros</a>
+                <a href="{% url 'nosotros' %}">Nosotros</a>
                 <a href="{% url 'habitaciones' %}">Habitaciones</a>
                 <a href="{% url 'restaurantes' %}">Restaurantes</a>
                 <a href="{% url 'eventos' %}">Eventos</a>
                 <a href="{% url 'servicio' %}">Servicios</a>
-                <a href="../html/entorno.html">Entorno</a>
-                <a href="../html/galeria.html">Galería</a>
+                <a href="{% url 'entorno' %}">Entorno</a>
+                <a href="{% url 'galeria' %}">Galería</a>
                 <a href="{% url 'buscar_reservas' %}" class="btn"> Reservar</a>
             </nav>
 
