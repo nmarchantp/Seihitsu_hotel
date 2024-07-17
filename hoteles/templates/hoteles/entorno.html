@@ -10,11 +10,27 @@
 <!-- -------------------------------------------------------------------------- -->
 
 {% block extra_head %}
-<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="{% static 'css/entorno.css' %}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="{% static 'js/api_clima.js'%}"></script>
 {% endblock %}
 
 {% block content %}
 <!--Aqui se debe colocar el contenido diferente de cada página-->
+<div class="portada-habitacion">
+    <h1>Clima Actual</h1>
+</div>
+
+<button id="consulta_clima_vina" class="btn btn-registrar" type="button">Consulta el clima de Viña</button>
+<div>
+    <ul id="clima_vina" class="clima_vina"></ul>
+</div>
+
+<button id="consulta_clima_santiago" class="btn btn-registrar" type="button">Consulta el clima de Santiago</button>
+<div>
+    <ul id="clima_stgo" class="clima_stgo"></ul>
+</div>
 
 
 <!--Aqui termina el contenido diferente de cada página-->
