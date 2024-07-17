@@ -32,11 +32,14 @@
     {% for habitacion in habitaciones_disponibles %}
     <li>
         <span>Habitación {{ habitacion.id_tipo_habitacion.nombre }}: {{ habitacion.precio_por_noche }}</span>
-        <form method="post" action="{% url 'resumen_reserva' habitacion_id=habitacion.id_habitacion %}">
-            {% csrf_token %}
-            <input type="hidden" name="fecha_inicio" value="{{ fecha_inicio }}">
-            <input type="hidden" name="fecha_fin" value="{{ fecha_fin }}">
-            <button type="submit">Reservar</button>
+        <form method="post" action="{% url 'resumen_reserva' habitacion.id_habitacion %}">
+          {% csrf_token %}
+          <input type="hidden" name="fecha_inicio" value="{{ fecha_inicio }}">
+          <input type="hidden" name="fecha_fin" value="{{ fecha_fin }}">
+          <input type="hidden" name="noches" value="{{ noches }}">
+          <input type="hidden" name="adultos" value="{{ adultos }}">
+          <input type="hidden" name="niños" value="{{ niños }}">
+          <button type="submit">Reservar</button>
         </form>
     </li>
     {% endfor %}
@@ -44,6 +47,4 @@
 {% else %}
 <p>No hay habitaciones disponibles para las fechas seleccionadas en {{ nombre_hotel }}</p>
 {% endif %}
-
-<!--Aqui termina el contenido diferente de cada página-->
 {% endblock %}

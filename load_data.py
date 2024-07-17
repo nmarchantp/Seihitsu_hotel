@@ -5,7 +5,7 @@ django.setup()
 
 from utilidades.models import Pais, Region, Comuna, Ubicacion
 from clientes.models import TipoCliente, MetodoPago
-from servicios.models import TipoServicio
+from servicios.models import TipoServicio, Servicio
 from hoteles.models import TipoHabitacion, Comodidad
 from eventos.models import TipoEvento
 from django.contrib.auth.models import User
@@ -15,6 +15,11 @@ def cargar_datos_iniciales():
     pais_chile = None
     region_metropolitana = None
     region_valparaiso = None
+    lavanderia =  None
+    restaurant = None
+    gimnasio = None
+    spa = None
+    piscina = None
 
     if not Pais.objects.exists():
         pais_chile = Pais.objects.create(nombre='Chile')
@@ -53,11 +58,11 @@ def cargar_datos_iniciales():
         print('Datos de metodo de pago cargados')
 
     if not TipoServicio.objects.exists():
-        TipoServicio.objects.create(nombre='Lavanderia')
-        TipoServicio.objects.create(nombre='Gimnasio')
-        TipoServicio.objects.create(nombre='Spa')
-        TipoServicio.objects.create(nombre='Piscina')
-        TipoServicio.objects.create(nombre='Restaurant')
+        lavanderia=TipoServicio.objects.create(nombre='Lavanderia')
+        gimnasio=TipoServicio.objects.create(nombre='Gimnasio')
+        spa=TipoServicio.objects.create(nombre='Spa')
+        piscina=TipoServicio.objects.create(nombre='Piscina')
+        restaurant=TipoServicio.objects.create(nombre='Restaurant')
         print('Datos de tipo servicio cargados')
 
     if not TipoHabitacion.objects.exists():
@@ -77,8 +82,16 @@ def cargar_datos_iniciales():
     if not TipoEvento.objects.exists():
         TipoEvento.objects.create(nombre='Seminario')
         TipoEvento.objects.create(nombre='Matrimonio')
-        TipoEvento.objects.create(nombre='Cumpleaño')
+        TipoEvento.objects.create(nombre='Cumpleaños')
         print('Datos de tipo evento cargados')
+
+    if not Servicio.objects.exists():
+        Servicio.objects.create(nombre='Lavado', id_categoria=lavanderia,precio=10000)
+        Servicio.objects.create(nombre='Secado',id_categoria=lavanderia,precio=5000)
+        Servicio.objects.create(nombre='Planchado',id_categoria=lavanderia,precio=5000)
+        Servicio.objects.create(nombre='Lavado en seco',id_categoria=lavanderia,precio=15000)
+        Servicio.objects.create(nombre='Planchado a vapor',id_categoria=lavanderia,precio=10000)
+        print('Datos de servicios cargados')
 
     if not User.objects.filter(username='nikoo').exists():
         User.objects.create_superuser(username='nikoo', email='ni.marchant@duocuc.cl', password='nikoo123')
