@@ -1,0 +1,23 @@
+.portada-habitacion {
+    margin: 150px 0 0 0;
+    padding: 60px 0;
+    text-align: center;
+    border: 1px solid #c7c7c7;
+    border-right: 0;
+    border-left: 0;
+}
+
+.portada-habitacion h1 {
+    font-size: 50px;
+}
+
+.btn-registrar {
+    font-size: 18px;
+    margin-top: 50px;
+    display: flex;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #e3bb41;
+    color: white;
+    align-items: center;
+}
